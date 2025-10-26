@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-автоматизация и консультации в Софии. Создаю рабочие сценарии, боты и автоматизации за 7-10 дней. Измеримый результат, NDA, поддержка.">
+  <meta name="keywords" content="AI автоматизация София, личный AI помощник, Telegram бот для бизнеса, AI консультант, автоматизация бизнес процессов">
+  <meta name="author" content="AI4Y">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai4y.com/">
+  <meta property="og:title" content="AI4Y - Ваш личный AI-консьерж для автоматизации">
+  <meta property="og:description" content="Создаю AI-автоматизации, боты и сценарии за 7-10 дней. Измеримый результат под ваши задачи.">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ai4y.com/">
+  <meta property="twitter:title" content="AI4Y - AI-автоматизация и консультации">
+  <meta property="twitter:description" content="Создаю AI-автоматизации, боты и сценарии за 7-10 дней. Измеримый результат.">
+  <meta property="twitter:image" content="/assets/images/og-image.jpg">
+  
+  <title>AI4Y - Ваш личный AI-консьерж | Автоматизация и AI за 7-10 дней</title>
+  
+  <!-- Preconnect для оптимизации -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+  
+  <!-- ==========================================================================
+       Header / Navigation
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="#hero" class="header__logo" aria-label="AI4Y - Главная">AI4Y</a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#values" class="nav__link" data-i18n="nav.benefits">Преимущества</a></li>
+          <li><a href="#services" class="nav__link" data-i18n="nav.services">Услуги</a></li>
+          <li><a href="#pricing" class="nav__link" data-i18n="nav.pricing">Цены</a></li>
+          <li><a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Контакт</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru" title="Русский">RU</button>
+        <button class="lang-btn" data-lang="bg" title="Български">BG</button>
+        <button class="lang-btn" data-lang="en" title="English">EN</button>
+      </div>
+      
+      <!-- Theme Switcher -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Переключить тему">
+        <span class="theme-toggle__icon">🌙</span>
+      </button>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle" aria-label="Открыть меню" data-action="toggle-menu">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация">
+      <ul class="mobile-nav__list">
+        <li><a href="#values" class="mobile-nav__link" data-mobile-link>Преимущества</a></li>
+        <li><a href="#services" class="mobile-nav__link" data-mobile-link>Услуги</a></li>
+        <li><a href="#pricing" class="mobile-nav__link" data-mobile-link>Цены</a></li>
+        <li><a href="#faq" class="mobile-nav__link" data-mobile-link>FAQ</a></li>
+        <li><a href="#contact" class="mobile-nav__link" data-mobile-link>Контакт</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- ==========================================================================
+       Main Content
+       ========================================================================== -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero__container">
+        <h1 class="hero__title" data-ab-test="hero-title" data-i18n="hero.titleA">
+          Ваш AI-партнер: меньше рутины — больше результата
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          AI-поезд набирает скорость каждый день, открывая новые возможности тем, кто готов это принять. Мы — ваши проводники в этом стремительном путешествии. Исследуем рынок AI-инструментов, подбираем оптимальные решения, обучаем команду и сопровождаем на пути к успеху.
+        </p>
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--primary btn--lg" data-cta="hero-diagnostic" data-i18n="hero.cta1">
+            Получить бесплатную диагностику 20 мин
+          </a>
+          <a href="#pricing" class="btn btn--outline btn--lg" data-cta="hero-pricing" data-i18n="hero.cta2">
+            Пакеты и цены
+          </a>
+        </div>
+        <div class="hero__trust">
+          <span class="hero__trust-item" data-i18n="hero.trust1">3+ лет работы с AI</span>
+          <span class="hero__trust-item" data-i18n="hero.trust2">София, работаем онлайн</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Value Proposition Section -->
+    <section class="values" id="values">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="values.subtitle">Почему мы</span>
+          <h2 class="section-header__title" data-i18n="values.title">Три ключевые выгоды</h2>
+          <p class="section-header__description" data-i18n="values.description">
+            Фокусируемся на практических решениях с измеримым эффектом
+          </p>
+        </div>
+        
+        <div class="values__grid">
+          <div class="card card--hover">
+            <div class="card__icon">⚡</div>
+            <h3 class="card__title" data-i18n="values.speed.title">Скорость</h3>
+            <p class="card__text" data-i18n="values.speed.text">
+              Готовые сценарии и пресеты за 7-10 дней. Без долгих разработок — сразу к результату.
+            </p>
+          </div>
+          
+          <div class="card card--hover">
+            <div class="card__icon">🎯</div>
+            <h3 class="card__title" data-i18n="values.simplicity.title">Простота</h3>
+            <p class="card__text" data-i18n="values.simplicity.text">
+              Без сложной терминологии. «Кнопки» и сценарии под ваш распорядок дня и рабочие процессы.
+            </p>
+          </div>
+          
+          <div class="card card--hover">
+            <div class="card__icon">📊</div>
+            <h3 class="card__title" data-i18n="values.measurability.title">Измеримость</h3>
+            <p class="card__text" data-i18n="values.measurability.text">
+              Фиксируем KPI и сравниваем до/после. Вы видите реальную экономию времени и ресурсов.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Target Audience Section -->
+    <section class="audience" id="audience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="audience.subtitle">Для кого</span>
+          <h2 class="section-header__title" data-i18n="audience.title">Кому подходят наши решения</h2>
+        </div>
+        
+        <div class="audience__tabs">
+          <button class="audience__tab active" data-tab="personal" data-i18n="audience.tab1">
+            Частные клиенты
+          </button>
+          <button class="audience__tab" data-tab="business" data-i18n="audience.tab2">
+            Бизнес
+          </button>
+        </div>
+        
+        <div class="audience__content active" data-content="personal">
+          <div class="audience__list">
+            <div class="audience__item">
+              <div class="audience__item-icon">💼</div>
+              <p class="audience__item-text" data-i18n-html="audience.personal.item1">
+                <strong>Инвесторы и предприниматели</strong> — автоматизация анализа сделок, ROI/IRR расчёты, коммуникация с брокерами
+              </p>
+            </div>
+            <div class="audience__item">
+              <div class="audience__item-icon">⏱️</div>
+              <p class="audience__item-text" data-i18n-html="audience.personal.item2">
+                <strong>Busy-профессионалы</strong> — помощь с email, календарём, документацией, подготовкой материалов
+              </p>
+            </div>
+            <div class="audience__item">
+              <div class="audience__item-icon">🚀</div>
+              <p class="audience__item-text" data-i18n-html="audience.personal.item3">
+                <strong>Те, кто хочет освободить время</strong> — делегировать рутину AI и фокусироваться на важном
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="audience__content" data-content="business">
+          <div class="audience__list">
+            <div class="audience__item">
+              <div class="audience__item-icon">🏢</div>
+              <p class="audience__item-text" data-i18n-html="audience.business.item1">
+                <strong>Real Estate агентства</strong> — автоматизация подбора объектов, коммуникации с клиентами, отчётность
+              </p>
+            </div>
+            <div class="audience__item">
+              <div class="audience__item-icon">🛍️</div>
+              <p class="audience__item-text" data-i18n-html="audience.business.item2">
+                <strong>E-commerce и сервисы</strong> — чат-боты поддержки 24/7, обработка заказов, контент-генерация
+              </p>
+            </div>
+            <div class="audience__item">
+              <div class="audience__item-icon">🏥</div>
+              <p class="audience__item-text" data-i18n-html="audience.business.item3">
+                <strong>Клиники и отели</strong> — автоматизация записи, FAQ-боты, персонализированные коммуникации
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="services.subtitle">Что вы получите</span>
+          <h2 class="section-header__title" data-i18n="services.title">Комплексные AI-решения</h2>
+          <p class="section-header__description">
+            <strong>Мы — ваши проводники в мире AI:</strong> Не продаём готовые продукты, а помогаем ориентироваться в стремительно растущем потоке AI-инструментов. Исследуем рынок вместе с вами, подбираем решения под вашу специфику, обучаем команду и сопровождаем на каждом этапе. Начните с бесплатных версий (Make, n8n, ChatGPT) — платите только за нашу экспертизу. Тестируйте, адаптируйте и масштабируйте, когда будете готовы.
+          </p>
+        </div>
+        
+        <div class="grid grid--4">
+          <div class="card card--hover">
+            <div class="card__icon">🔍</div>
+            <h3 class="card__title" data-i18n="services.item1.title">Исследование и подбор инструментов</h3>
+            <p class="card__text" data-i18n="services.item1.text">
+              Помогаем исследовать рынок AI-инструментов и подобрать оптимальные под ваш бизнес
+            </p>
+          </div>
+          
+          <div class="card card--hover">
+            <div class="card__icon">⚙️</div>
+            <h3 class="card__title" data-i18n="services.item2.title">Автоматизации под ключ</h3>
+            <p class="card__text" data-i18n="services.item2.text">
+              Make.com, n8n, мессенджер-боты (Telegram, WhatsApp, Viber), интеграции с вашими системами
+            </p>
+          </div>
+          
+          <div class="card card--hover">
+            <div class="card__icon">📚</div>
+            <h3 class="card__title" data-i18n="services.item3.title">Обучение и поддержка</h3>
+            <p class="card__text" data-i18n="services.item3.text">
+              Короткие сессии и памятки под ваш технологический стек
+            </p>
+          </div>
+          
+          <div class="card card--hover">
+            <div class="card__icon">🔧</div>
+            <h3 class="card__title" data-i18n="services.item4.title">Сопровождение</h3>
+            <p class="card__text" data-i18n="services.item4.text">
+              Обновления, эксперименты с новыми моделями, регулярные отчёты
+            </p>
+          </div>
+        </div>
+        
+        <!-- Инструменты и услуги -->
+        <div style="margin-top: 4rem; text-align: center;">
+          <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-dark);">
+            <span data-i18n="services.tools">Инструменты, с которыми работаем</span>
+          </h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem;">
+            <span class="badge badge--primary">Make</span>
+            <span class="badge badge--primary">n8n</span>
+            <span class="badge badge--primary">ChatGPT</span>
+            <span class="badge badge--primary">Claude</span>
+            <span class="badge badge--primary" data-i18n="about.skill.messengerBots">Мессенджер-боты</span>
+          </div>
+          
+          <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-dark);">
+            <span data-i18n="services.servicesTitle">Наши услуги</span>
+          </h3>
+          <p style="font-size: 1.125rem; color: var(--color-gray-dark);" data-i18n="services.servicesList">
+            Автоматизации • Интеграции с AI • AI-агенты • Чат-боты • No-code разработка • Консультации
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Use Cases Section -->
+    <section class="cases" id="cases">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="cases.subtitle">Примеры применения</span>
+          <h2 class="section-header__title" data-i18n="cases.title">Типовые кейсы</h2>
+          <p class="section-header__description" data-i18n="cases.description">
+            Реальные сценарии, которые уже работают
+          </p>
+        </div>
+        
+        <div class="cases__grid">
+          <div class="case-card">
+            <h3 class="case-card__title" data-i18n="cases.case1.title">💼 Инвестор</h3>
+            <p class="case-card__description" data-i18n="cases.case1.text">
+              Автоматический shortlist объектов по критериям, расчёт ROI/IRR, генерация вопросов брокеру, суммаризация документов
+            </p>
+          </div>
+          
+          <div class="case-card">
+            <h3 class="case-card__title" data-i18n="cases.case2.title">📧 Офисная работа</h3>
+            <p class="case-card__description" data-i18n="cases.case2.text">
+              Суммаризация длинных email-цепочек, генерация черновиков ответов, автоматические слоты в календаре, подготовка встреч
+            </p>
+          </div>
+          
+          <div class="case-card">
+            <h3 class="case-card__title" data-i18n="cases.case3.title">💬 Поддержка клиентов</h3>
+            <p class="case-card__description" data-i18n="cases.case3.text">
+              Q&A-бот 24/7 для типовых запросов, эскалация сложных вопросов, аналитика частых проблем
+            </p>
+          </div>
+          
+          <div class="case-card">
+            <h3 class="case-card__title" data-i18n="cases.case4.title">✍️ Контент</h3>
+            <p class="case-card__description" data-i18n="cases.case4.text">
+              Структуры статей, проверка ошибок и тона, генерация вариаций под разные аудитории, SEO-оптимизация
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="process.subtitle">Как это работает</span>
+          <h2 class="section-header__title" data-i18n="process.title">Процесс работы</h2>
+          <p class="section-header__description" data-i18n="process.description">
+            Прозрачный и структурированный подход от диагностики до результата
+          </p>
+        </div>
+        
+        <div class="process__timeline">
+          <div class="process__step">
+            <div class="process__step-number">1</div>
+            <h3 class="process__step-title" data-i18n="process.step1.title">Диагностика 20-60 мин</h3>
+            <p class="process__step-description" data-i18n="process.step1.text">
+              Определяем ваши цели и находим «быстрые победы» — задачи, где AI даст эффект сразу
+            </p>
+          </div>
+          
+          <div class="process__step">
+            <div class="process__step-number">2</div>
+            <h3 class="process__step-title" data-i18n="process.step2.title">Дизайн пилота</h3>
+            <p class="process__step-description" data-i18n="process.step2.text">
+              Выбираем 1 чёткую метрику успеха и планируем минимальное решение для её достижения
+            </p>
+          </div>
+          
+          <div class="process__step">
+            <div class="process__step-number">3</div>
+            <h3 class="process__step-title" data-i18n="process.step3.title">Сборка (2-4 недели)</h3>
+            <p class="process__step-description" data-i18n="process.step3.text">
+              Создаём и тестируем решение, демонстрация на ваших реальных данных
+            </p>
+          </div>
+          
+          <div class="process__step">
+            <div class="process__step-number">4</div>
+            <h3 class="process__step-title" data-i18n="process.step4.title">Обучение и пресеты</h3>
+            <p class="process__step-description" data-i18n="process.step4.text">
+              Видео-гайды, памятки и шаблоны для самостоятельного использования
+            </p>
+          </div>
+          
+          <div class="process__step">
+            <div class="process__step-number">5</div>
+            <h3 class="process__step-title" data-i18n="process.step5.title">Сопровождение</h3>
+            <p class="process__step-description" data-i18n="process.step5.text">
+              Улучшения, отчёты по KPI, адаптация под изменения в ваших процессах
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="pricing.subtitle">Прозрачные цены</span>
+          <h2 class="section-header__title" data-i18n="pricing.title">Пакеты услуг</h2>
+          <p class="section-header__description" data-i18n="pricing.description">
+            Выберите подходящий вариант или создадим индивидуальное решение
+          </p>
+        </div>
+        
+        <div class="pricing__grid">
+          <!-- Start Package -->
+          <div class="pricing-card pricing-card--featured">
+            <h3 class="pricing-card__title" data-i18n="pricing.start.title">Start</h3>
+            <div class="pricing-card__price" data-i18n="pricing.start.price">350 €</div>
+            <span class="pricing-card__period" data-i18n="pricing.start.period">единоразово</span>
+            <p class="pricing-card__description" data-i18n="pricing.start.description">
+              Идеально для первого знакомства с AI-автоматизацией
+            </p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-i18n="pricing.start.feature1">Диагностическая сессия 60 мин</li>
+              <li class="pricing-card__feature" data-i18n="pricing.start.feature2">5 готовых AI-пресетов</li>
+              <li class="pricing-card__feature" data-i18n="pricing.start.feature3">Инструкции по использованию</li>
+              <li class="pricing-card__feature" data-i18n="pricing.start.feature4">1 неделя email-поддержки</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full" data-cta="pricing-start" data-i18n="pricing.start.cta">
+              Выбрать Start
+            </a>
+          </div>
+          
+          <!-- Pilot Package -->
+          <div class="pricing-card">
+            <h3 class="pricing-card__title" data-i18n="pricing.pilot.title">Pilot</h3>
+            <div class="pricing-card__price" data-i18n="pricing.pilot.price">3.5K €</div>
+            <span class="pricing-card__period" data-i18n="pricing.pilot.period">проект 2-4 недели</span>
+            <p class="pricing-card__description" data-i18n="pricing.pilot.description">
+              Полноценное внедрение ключевой автоматизации
+            </p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-i18n="pricing.pilot.feature1">1 ключевая AI-цепочка</li>
+              <li class="pricing-card__feature" data-i18n="pricing.pilot.feature2">Интеграции с вашими системами</li>
+              <li class="pricing-card__feature" data-i18n="pricing.pilot.feature3">Обучающие сессии для команды</li>
+              <li class="pricing-card__feature" data-i18n="pricing.pilot.feature4">1 месяц поддержки</li>
+              <li class="pricing-card__feature" data-i18n="pricing.pilot.feature5">Отчёт по KPI</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-cta="pricing-pilot" data-i18n="pricing.pilot.cta">
+              Выбрать Pilot
+            </a>
+          </div>
+          
+          <!-- Care Package -->
+          <div class="pricing-card">
+            <h3 class="pricing-card__title" data-i18n="pricing.care.title">Care</h3>
+            <div class="pricing-card__price" data-i18n="pricing.care.price">2K €</div>
+            <span class="pricing-card__period" data-i18n="pricing.care.period">в месяц</span>
+            <p class="pricing-card__description" data-i18n="pricing.care.description">
+              Постоянная поддержка и развитие решений
+            </p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-i18n="pricing.care.feature1">Регулярные обновления</li>
+              <li class="pricing-card__feature" data-i18n="pricing.care.feature2">Новые эксперименты</li>
+              <li class="pricing-card__feature" data-i18n="pricing.care.feature3">Приоритетная поддержка</li>
+              <li class="pricing-card__feature" data-i18n="pricing.care.feature4">Ежемесячные отчёты</li>
+              <li class="pricing-card__feature" data-i18n="pricing.care.feature5">Адаптация под изменения</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-cta="pricing-care" data-i18n="pricing.care.cta">
+              Выбрать Care
+            </a>
+          </div>
+          
+          <!-- Team Clinic Package -->
+          <div class="pricing-card">
+            <h3 class="pricing-card__title" data-i18n="pricing.team.title">Team Clinic</h3>
+            <div class="pricing-card__price" data-i18n="pricing.team.price">2.5K €</div>
+            <span class="pricing-card__period" data-i18n="pricing.team.period">мини-тренинг</span>
+            <p class="pricing-card__description" data-i18n="pricing.team.description">
+              Обучение команды работе с AI-инструментами
+            </p>
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-i18n="pricing.team.feature1">3-6 человек</li>
+              <li class="pricing-card__feature" data-i18n="pricing.team.feature2">Практические воркшопы</li>
+              <li class="pricing-card__feature" data-i18n="pricing.team.feature3">Персональные кейсы</li>
+              <li class="pricing-card__feature" data-i18n="pricing.team.feature4">Материалы и шаблоны</li>
+              <li class="pricing-card__feature" data-i18n="pricing.team.feature5">2 недели Q&A поддержки</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-cta="pricing-team" data-i18n="pricing.team.cta">
+              Выбрать Team Clinic
+            </a>
+          </div>
+        </div>
+        
+        <div class="text-center mt-xl">
+          <a href="#contact" class="btn btn--secondary btn--lg" data-cta="pricing-custom" data-i18n="pricing.ctaCustom">
+            Подобрать пакет под мою задачу
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Guarantees Section -->
+    <section class="guarantees" id="guarantees">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="guarantees.subtitle">Ваша безопасность</span>
+          <h2 class="section-header__title" data-i18n="guarantees.title">Гарантии и безопасность</h2>
+        </div>
+        
+        <div class="guarantees__grid">
+          <div class="guarantee-card">
+            <div class="guarantee-card__icon">🔒</div>
+            <p class="guarantee-card__text" data-i18n="guarantees.item1">
+              NDA по умолчанию, приватный стек, прозрачные SOW для каждого проекта
+            </p>
+          </div>
+          
+          <div class="guarantee-card">
+            <div class="guarantee-card__icon">✓</div>
+            <p class="guarantee-card__text" data-i18n="guarantees.item2">
+              «Не покажем 3 полезных сценария в Start — вернём оплату»
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="about.subtitle">О нас</span>
+          <h2 class="section-header__title" data-i18n="about.title">Кто создаёт ваши решения</h2>
+        </div>
+        
+        <div class="about__content">
+          <p class="about__text" data-i18n="about.text">
+            Более 2.5 лет создаём AI-инструменты, боты и автоматизации для частных клиентов и бизнеса. 
+            Работаем с SUNO, генерацией изображений и видео, GitHub Copilot и Cursor. 
+            Говорим на русском, украинском и английском. Базируемся в Софии, работаем онлайн по всему миру.
+          </p>
+          
+          <div class="about__skills">
+            <span class="about__skill">ChatGPT</span>
+            <span class="about__skill">Claude</span>
+            <span class="about__skill">Make.com</span>
+            <span class="about__skill">n8n</span>
+            <span class="about__skill" data-i18n="about.skill.messengerBots">Мессенджер-боты</span>
+            <span class="about__skill">GitHub Copilot</span>
+            <span class="about__skill">SUNO AI</span>
+            <span class="about__skill">Cursor</span>
+            <span class="about__skill" data-i18n="about.skill.andMore">... и многие другие</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__subtitle" data-i18n="faq.subtitle">Частые вопросы</span>
+          <h2 class="section-header__title" data-i18n="faq.title">FAQ</h2>
+        </div>
+        
+        <div class="faq__list">
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" aria-expanded="false">
+              <span data-i18n="faq.q1.question">Нужна ли техническая подготовка для работы с вашими решениями?</span>
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-content" data-i18n="faq.q1.answer">
+                Нет, все решения создаются «под ключ». Вы получаете готовые кнопки и сценарии, 
+                которые работают в один клик. Я провожу короткое обучение и оставляю понятные инструкции.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" aria-expanded="false">
+              <span data-i18n="faq.q2.question">Какие данные используются для работы AI?</span>
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-content" data-i18n="faq.q2.answer">
+                Только ваши данные и только с вашего согласия. Все проекты защищены NDA, 
+                используем приватные API ключи. Вы контролируете, какая информация передаётся в AI-модели.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" aria-expanded="false">
+              <span data-i18n="faq.q3.question">Сколько времени займёт у меня работа с системой?</span>
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-content" data-i18n="faq.q3.answer">
+                На старте — 1-2 часа для диагностики и обучения. Дальше вы работаете по готовым кнопкам: 
+                большинство сценариев занимают 10-30 секунд. Цель — освободить ваше время, а не отнять его.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" aria-expanded="false">
+              <span data-i18n="faq.q4.question">Можно ли начать с малого и масштабировать?</span>
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-content" data-i18n="faq.q4.answer">
+                Да, именно так я и рекомендую! Начните с пакета Start, проверьте подход на 5 сценариях. 
+                Если результат устроит — масштабируем на пакет Pilot или Care с полной автоматизацией.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" aria-expanded="false">
+              <span data-i18n="faq.q5.question">Работаете ли вы с клиентами из других стран?</span>
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-content" data-i18n="faq.q5.answer">
+                Да, я работаю онлайн с клиентами по всему миру. Говорю на русском, украинском и английском. 
+                Часовые пояса обычно не проблема — находим удобное время для созвонов.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title" data-i18n="contact.title">Бесплатная диагностика 20 мин</h2>
+          <p class="section-header__description" data-i18n="contact.description">
+            Заполните форму — свяжусь в течение 24 часов
+          </p>
+        </div>
+        
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label" data-i18n="contact.nameLabel">Ваше имя *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              data-i18n-placeholder="contact.namePlaceholder"
+              placeholder="Иван Иванов"
+              required
+            >
+            <span class="form-error" data-i18n="contact.nameError">Пожалуйста, введите ваше имя</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="contact" class="form-label" data-i18n="contact.contactLabel">Email или Telegram *</label>
+            <input 
+              type="text" 
+              id="contact" 
+              name="contact" 
+              class="form-input" 
+              data-i18n-placeholder="contact.contactPlaceholder"
+              placeholder="email@example.com или @telegram"
+              required
+            >
+            <span class="form-error" data-i18n="contact.contactError">Пожалуйста, введите email или Telegram</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="package" class="form-label" data-i18n="contact.packageLabel">Интересующий пакет (опционально)</label>
+            <select id="package" name="package" class="form-select">
+              <option value="" data-i18n="contact.packageDefault">Не выбран</option>
+              <option value="start" data-i18n="pricing.start.title">Start</option>
+              <option value="pilot" data-i18n="pricing.pilot.title">Pilot</option>
+              <option value="care" data-i18n="pricing.care.title">Care</option>
+              <option value="team" data-i18n="pricing.team.title">Team Clinic</option>
+              <option value="custom" data-i18n="contact.packageCustom">Индивидуальное решение</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label" data-i18n="contact.messageLabel">Ваша задача (опционально)</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              class="form-textarea" 
+              data-i18n-placeholder="contact.messagePlaceholder"
+              placeholder="Расскажите кратко, что хотите автоматизировать..."
+            ></textarea>
+          </div>
+          
+          <div class="contact__checkbox-wrapper">
+            <input 
+              type="checkbox" 
+              id="gdpr" 
+              name="gdpr" 
+              class="contact__checkbox"
+              required
+            >
+            <label for="gdpr" class="contact__checkbox-label" data-i18n-html="contact.gdprLabel">
+              Согласен на обработку персональных данных согласно 
+              <a href="#privacy">политике конфиденциальности</a>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn--secondary btn--lg btn--full" data-i18n="contact.submit">
+            Отправить заявку
+          </button>
+          
+          <div class="contact__success" id="successMessage" data-i18n="contact.success">
+            ✓ Спасибо! Ваша заявка принята. Свяжусь с вами в течение 24 часов.
+          </div>
+        </form>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copyright" data-i18n="footer.copyright">
+        © 2025 AI4Y. Все права защищены.
+      </p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
+

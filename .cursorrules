@@ -1,0 +1,314 @@
+# Cursor Rules для AI4Y Landing Page
+
+## Общие правила
+
+### Стиль кода
+- Использовать семантический HTML5
+- CSS: БЭМ-подобная методология для классов (block__element--modifier)
+- JavaScript: ES6+, чистый vanilla JS без фреймворков
+- Комментарии на русском для логики, английский для технических терминов
+- Отступы: 2 пробела для HTML/CSS/JS
+
+### Именование
+- **CSS классы**: kebab-case (hero-section, cta-button, pricing-card)
+- **JavaScript**: camelCase для переменных/функций (handleFormSubmit, scrollToSection)
+- **Константы**: UPPER_SNAKE_CASE (API_ENDPOINT, MAX_RETRIES)
+- **Файлы**: kebab-case (main.css, form-handler.js)
+
+### Структура файлов
+```
+AI4Y/
+├── index.html
+├── css/
+│   ├── reset.css
+│   ├── variables.css
+│   ├── components.css
+│   └── main.css
+├── js/
+│   ├── config.js
+│   ├── animations.js
+│   ├── forms.js
+│   └── main.js
+├── assets/
+│   ├── images/
+│   └── fonts/
+└── README.md
+```
+
+## HTML правила
+
+### Семантика
+- Использовать `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`
+- Каждая секция должна иметь уникальный ID для навигации
+- Формы должны иметь proper labels и accessibility атрибуты
+- Изображения всегда с alt-текстом
+
+### Структура секций
+```html
+<section id="section-name" class="section-name">
+  <div class="container">
+    <h2 class="section-name__title">Заголовок</h2>
+    <!-- контент -->
+  </div>
+</section>
+```
+
+### Meta теги (обязательно)
+- viewport для адаптивности
+- charset UTF-8
+- Open Graph для соцсетей
+- description для SEO
+
+## CSS правила
+
+### Переменные (variables.css)
+- Все цвета через CSS Custom Properties
+- Размеры шрифтов с clamp() для адаптивности
+- Spacing system (8px base)
+
+### Mobile-first подход
+```css
+/* Базовые стили для мобильных */
+.element { }
+
+/* Tablet */
+@media (min-width: 640px) { }
+
+/* Desktop */
+@media (min-width: 1024px) { }
+```
+
+### Компоненты
+- Переиспользуемые классы в components.css
+- Кнопки: .btn, .btn--primary, .btn--secondary, .btn--outline
+- Карточки: .card, .card--hover
+- Container: .container (max-width + padding)
+
+### Анимации
+- Использовать CSS transitions для простых (0.3s ease)
+- CSS @keyframes для сложных анимаций
+- Всегда добавлять `prefers-reduced-motion` для доступности
+
+## JavaScript правила
+
+### Модульность
+- Каждый файл отвечает за свою зону ответственности
+- config.js - только конфигурация
+- animations.js - только анимации
+- forms.js - только обработка форм
+- main.js - инициализация и общая логика
+
+### Event Listeners
+```javascript
+// Использовать делегирование событий где возможно
+document.addEventListener('DOMContentLoaded', () => {
+  initApp();
+});
+
+// Избегать inline обработчиков в HTML
+```
+
+### Селекторы
+- Использовать `data-*` атрибуты для JS hooks
+- Избегать привязки к CSS классам для JS логики
+```html
+<button class="btn btn--primary" data-action="open-form">CTA</button>
+```
+
+### Асинхронность
+- Использовать async/await вместо .then()
+- Всегда обрабатывать ошибки (try/catch)
+
+### Производительность
+- Debounce для scroll/resize событий
+- Intersection Observer для lazy loading и scroll-анимаций
+- requestAnimationFrame для плавных анимаций
+
+## Контент и копирайтинг
+
+### Тон коммуникации
+- Профессиональный, но дружелюбный
+- Прямые выгоды, без воды
+- Короткие предложения (8-12 слов)
+- Активный залог
+- Конкретные цифры вместо общих фраз
+
+### CTA кнопки
+- Глаголы действия: "Получить", "Забронировать", "Посмотреть"
+- Указание выгоды или времени: "Бесплатная диагностика 20 мин"
+- Контрастные цвета
+
+### Иерархия заголовков
+- H1 - только один (в Hero)
+- H2 - заголовки секций
+- H3 - подзаголовки внутри секций
+- H4-H6 - по необходимости
+
+## Адаптивность
+
+### Тестирование на
+- iPhone SE (375px)
+- iPad (768px)
+- Desktop (1920px)
+
+### Типографика
+- clamp() для fluid typography
+- Минимум 16px для body текста
+- Line-height: 1.5-1.7 для читабельности
+
+### Изображения
+- Использовать srcset для разных разрешений
+- WebP с PNG/JPG fallback
+- Lazy loading для изображений ниже fold
+
+## Accessibility (A11y)
+
+### Обязательно
+- ARIA labels где нужно
+- Контраст минимум 4.5:1 (WCAG AA)
+- Клавиатурная навигация (Tab, Enter, Esc)
+- Видимые focus states
+- Skip to content link
+
+### Формы
+- Labels связаны с inputs (for/id)
+- Error messages читаемые и понятные
+- Required fields помечены визуально и программно
+
+## SEO
+
+### Обязательные элементы
+- Уникальный title (50-60 символов)
+- Meta description (150-160 символов)
+- Canonical URL
+- Schema.org разметка (Person, Service, FAQPage)
+- Alt-теги для изображений
+
+### Структура URL
+- Чистые, читаемые URLs
+- Якорные ссылки для навигации: #hero, #pricing, #contact
+
+## Производительность
+
+### Цели
+- First Contentful Paint < 1.5s
+- Largest Contentful Paint < 2.5s
+- Cumulative Layout Shift < 0.1
+- Lighthouse Score > 90
+
+### Оптимизация
+- Минификация CSS/JS перед деплоем
+- Критический CSS inline в <head>
+- Отложенная загрузка некритичных ресурсов
+- Оптимизация изображений (TinyPNG, Squoosh)
+
+## Git workflow
+
+### Commits
+- Сообщения на английском
+- Формат: `type: description`
+- Типы: feat, fix, style, refactor, docs, perf
+
+### Примеры
+```
+feat: add hero section with A/B testing
+style: improve button hover effects
+fix: mobile menu toggle on iOS
+refactor: extract form validation to separate module
+```
+
+## Тестирование
+
+### Чеклист перед коммитом
+- [ ] HTML валидация (W3C Validator)
+- [ ] CSS валидация
+- [ ] JavaScript без ошибок в консоли
+- [ ] Проверка на мобильных устройствах
+- [ ] Все ссылки рабочие
+- [ ] Формы отправляются корректно
+
+### Браузеры
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Комментарии
+
+### Когда комментировать
+- Сложная логика требует пояснения
+- Временные хаки/workarounds (с TODO)
+- Секции кода для навигации
+
+### Формат
+```css
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+```
+
+```javascript
+/**
+ * Отправляет форму диагностики через Fetch API
+ * @param {FormData} formData - данные формы
+ * @returns {Promise<Object>} ответ сервера
+ */
+function submitDiagnosticForm(formData) {
+  // реализация
+}
+```
+
+## Безопасность
+
+### Формы
+- Валидация на клиенте и сервере
+- CSRF protection (если есть backend)
+- Sanitize user input
+- HTTPS обязательно
+
+### Privacy
+- GDPR compliance (согласие на обработку данных)
+- Ссылка на Privacy Policy
+- NDA упоминание
+
+## Аналитика
+
+### События для отслеживания
+- CTA клики (каждая кнопка отдельно)
+- Отправка форм
+- Скролл-глубина (25%, 50%, 75%, 100%)
+- Клики на pricing карточки
+- Раскрытие FAQ
+
+### Инструменты
+- Google Analytics 4 или Yandex Metrica
+- Hotjar/Microsoft Clarity для heatmaps (опционально)
+
+---
+
+## Быстрые команды для разработки
+
+### Создание новой секции
+1. Добавить HTML в index.html с правильным ID
+2. Создать стили в main.css под комментарием с названием секции
+3. Если нужен JS - добавить в соответствующий модуль
+4. Проверить адаптивность на всех брейкпоинтах
+
+### Добавление новой кнопки
+```html
+<button class="btn btn--primary" data-action="название">Текст</button>
+```
+
+### Добавление новой карточки
+```html
+<div class="card">
+  <div class="card__icon"><!-- иконка --></div>
+  <h3 class="card__title">Заголовок</h3>
+  <p class="card__text">Текст</p>
+</div>
+```
+
+---
+
+**При любых изменениях**: сохранять консистентность с существующим кодом, проверять адаптивность, тестировать на мобильных устройствах.
+

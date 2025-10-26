@@ -1,0 +1,90 @@
+{
+  "en": {
+    "hero": {
+      "titleA": "Your AI Partner: Less Routine, More Results",
+      "titleB": "AI Automation & Custom Solutions in 7-10 Days",
+      "titleC": "Practical AI: Fast Implementation, Measurable Impact",
+      "subtitle": "We help small and medium businesses explore, select and implement AI tools. Custom automation, integrations, and consultations. Try with free tools first, scale when ready.",
+      "cta1": "Get Free 20-Min Diagnostic",
+      "cta2": "Packages & Pricing",
+      "trust1": "3+ years working with AI",
+      "trust2": "Sofia, working online"
+    },
+    "values": {
+      "subtitle": "Why Choose Us",
+      "title": "Three Key Benefits",
+      "description": "We focus on practical solutions with measurable results",
+      "speed": {
+        "title": "Speed",
+        "text": "Ready-made scenarios and presets in 7-10 days. No lengthy development — straight to results."
+      },
+      "simplicity": {
+        "title": "Simplicity",
+        "text": "No complex terminology. 'Buttons' and scenarios tailored to your daily routine and workflows."
+      },
+      "measurability": {
+        "title": "Measurability",
+        "text": "We track KPIs and compare before/after. You see real time and resource savings."
+      }
+    }
+  },
+  "ru": {
+    "hero": {
+      "titleA": "Ваш AI-партнер: меньше рутины — больше результата",
+      "titleB": "Автоматизации и AI под ваши задачи за 7-10 дней",
+      "titleC": "Внедрим AI без теории: быстрые сценарии, измеримый эффект",
+      "subtitle": "Помогаем малому и среднему бизнесу исследовать, подбирать и внедрять AI-инструменты. Автоматизации, интеграции и консультации. Начните с бесплатных инструментов, масштабируйте при необходимости.",
+      "cta1": "Получить бесплатную диагностику 20 мин",
+      "cta2": "Пакеты и цены",
+      "trust1": "3+ лет работы с AI",
+      "trust2": "София, работаем онлайн"
+    },
+    "values": {
+      "subtitle": "Почему мы",
+      "title": "Три ключевые выгоды",
+      "description": "Фокусируемся на практических решениях с измеримым эффектом",
+      "speed": {
+        "title": "Скорость",
+        "text": "Готовые сценарии и пресеты за 7-10 дней. Без долгих разработок — сразу к результату."
+      },
+      "simplicity": {
+        "title": "Простота",
+        "text": "Без сложной терминологии. «Кнопки» и сценарии под ваш распорядок дня и рабочие процессы."
+      },
+      "measurability": {
+        "title": "Измеримость",
+        "text": "Фиксируем KPI и сравниваем до/после. Вы видите реальную экономию времени и ресурсов."
+      }
+    }
+  },
+  "bg": {
+    "hero": {
+      "titleA": "Вашият AI партньор: по-малко рутина — повече резултати",
+      "titleB": "AI автоматизация и решения за 7-10 дни",
+      "titleC": "Внедряваме AI без теория: бързи сценарии, измерим ефект",
+      "subtitle": "Помагаме на малкия и среден бизнес да изследва, избира и внедрява AI инструменти. Автоматизация, интеграции и консултации. Започнете с безплатни инструменти, мащабирайте при нужда.",
+      "cta1": "Безплатна диагностика 20 мин",
+      "cta2": "Пакети и цени",
+      "trust1": "3+ години работа с AI",
+      "trust2": "София, работим онлайн"
+    },
+    "values": {
+      "subtitle": "Защо ние",
+      "title": "Три ключови предимства",
+      "description": "Фокусираме се върху практични решения с измерими резултати",
+      "speed": {
+        "title": "Скорост",
+        "text": "Готови сценарии и пресети за 7-10 дни. Без дълги разработки — директно към резултати."
+      },
+      "simplicity": {
+        "title": "Простота",
+        "text": "Без сложна терминология. 'Бутони' и сценарии под вашия дневен ред и работни процеси."
+      },
+      "measurability": {
+        "title": "Измеримост",
+        "text": "Фиксираме KPI и сравняваме преди/след. Виждате реална икономия на време и ресурси."
+      }
+    }
+  }
+}
+

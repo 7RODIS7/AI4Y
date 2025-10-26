@@ -1,0 +1,12 @@
+# robots.txt для AI4Y Landing Page
+
+User-agent: *
+Allow: /
+
+# Блокируем служебные файлы
+Disallow: /js/
+Disallow: /css/
+
+# Sitemap (обновите URL после деплоя)
+Sitemap: https://yourdomain.com/sitemap.xml
+
