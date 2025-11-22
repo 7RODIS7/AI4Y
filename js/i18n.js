@@ -18,7 +18,7 @@ const i18n = {
         contact: 'Обсудить проект'
       },
       hero: {
-        badge: 'AI Consulting & Integration',
+        badge: 'AI Консультация, Интеграция, Автоматизация',
         title: 'Автоматизация бизнеса',
         titleHighlight: 'силой искусственного интеллекта',
         subtitle: 'Превращаем хаос рутины в структурированные процессы. Внедряем AI-ассистентов, чат-ботов и автоматизируем рабочие потоки под ключ.',
@@ -47,7 +47,7 @@ const i18n = {
       },
       services: {
         title: 'Что мы умеем',
-        subtitle: 'От простых ботов до сложных интеграций (RAG, Make, n8n)',
+        subtitle: 'От простых ботов до комплексных систем управления бизнесом',
         tabs: {
           assistants: 'Ассистенты и Боты',
           automation: 'Автоматизация',
@@ -92,7 +92,7 @@ const i18n = {
           title: 'Системный порядок',
           item1: '0 минут (полная автономия)',
           item2: 'Мгновенный ответ 24/7',
-          item3: '100% точность данных',
+          item3: 'Рост прибыли и скорости',
           item4: 'Фокус на стратегии'
         }
       },
@@ -120,16 +120,35 @@ const i18n = {
       },
       footer: {
         slogan: 'Интеллектуальная автоматизация для вашего роста.',
+        menu: 'Меню',
+        services: 'Услуги',
+        socials: 'Мы в соцсетях',
         contacts: 'Контакты',
         location: 'София, Болгария (Online worldwide)',
+        privacy: 'Политика конфиденциальности',
         copyright: '© 2025 AI4Y. All rights reserved.'
+      },
+      cookies: {
+        text: 'Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с нашей',
+        link: 'политикой конфиденциальности',
+        btn: 'Хорошо'
+      },
+      privacy: {
+        title: 'Политика конфиденциальности',
+        intro: 'Мы серьезно относимся к вашей конфиденциальности. Этот сайт собирает минимально необходимое количество данных для функционирования.',
+        dataCollection: 'Сбор данных',
+        dataText: 'Мы собираем только те данные, которые вы добровольно предоставляете через формы обратной связи (имя, контактные данные). Эти данные используются исключительно для связи с вами.',
+        cookiesTitle: 'Файлы Cookie',
+        cookiesText: 'Мы используем технические файлы cookie для сохранения ваших настроек (например, выбранного языка). Мы не используем сторонние рекламные трекеры.',
+        rights: 'Ваши права',
+        rightsText: 'Вы можете в любой момент запросить удаление ваших данных, написав нам на contact@ai4y.com.'
       }
     },
 
     // ==========================================================================
     // ENGLISH
     // ==========================================================================
-    en: {
+      en: {
       nav: {
         problems: 'Challenges',
         solutions: 'Solutions',
@@ -138,7 +157,7 @@ const i18n = {
         contact: 'Discuss Project'
       },
       hero: {
-        badge: 'AI Consulting & Integration',
+        badge: 'AI Consulting, Integration, Automation',
         title: 'Business Automation',
         titleHighlight: 'Powered by AI',
         subtitle: 'We turn routine chaos into structured processes. Implementing AI assistants, chatbots, and turnkey workflow automation.',
@@ -212,7 +231,7 @@ const i18n = {
           title: 'Systematic Order',
           item1: '0 minutes (full autonomy)',
           item2: 'Instant 24/7 response',
-          item3: '100% data accuracy',
+          item3: 'Profit & Speed Growth',
           item4: 'Focus on strategy'
         }
       },
@@ -240,9 +259,28 @@ const i18n = {
       },
       footer: {
         slogan: 'Intelligent automation for your growth.',
+        menu: 'Menu',
+        services: 'Services',
+        socials: 'Socials',
         contacts: 'Contacts',
         location: 'Sofia, Bulgaria (Online worldwide)',
+        privacy: 'Privacy Policy',
         copyright: '© 2025 AI4Y. All rights reserved.'
+      },
+      cookies: {
+        text: 'We use cookies to improve your experience. By continuing to visit this site you agree to our',
+        link: 'privacy policy',
+        btn: 'Got it'
+      },
+      privacy: {
+        title: 'Privacy Policy',
+        intro: 'We take your privacy seriously. This website collects the minimum amount of data necessary for its operation.',
+        dataCollection: 'Data Collection',
+        dataText: 'We only collect data that you voluntarily provide via contact forms (name, contact details). This data is used solely to contact you.',
+        cookiesTitle: 'Cookies',
+        cookiesText: 'We use technical cookies to save your preferences (e.g. selected language). We do not use third-party advertising trackers.',
+        rights: 'Your Rights',
+        rightsText: 'You can request the deletion of your data at any time by emailing us at contact@ai4y.com.'
       }
     },
 
@@ -258,7 +296,7 @@ const i18n = {
         contact: 'Обсъждане'
       },
       hero: {
-        badge: 'AI Consulting & Integration',
+        badge: 'AI Консултации, Интеграция, Автоматизация',
         title: 'Бизнес Автоматизация',
         titleHighlight: 'със силата на изкуствения интелект',
         subtitle: 'Превръщаме хаоса от рутина в структурирани процеси. Внедряваме AI асистенти, чатботове и автоматизираме работни потоци до ключ.',
@@ -332,7 +370,7 @@ const i18n = {
           title: 'Системен ред',
           item1: '0 минути (пълна автономия)',
           item2: 'Мигновен отговор 24/7',
-          item3: '100% точност на данните',
+          item3: 'Ръст на печалбата и скоростта',
           item4: 'Фокус върху стратегията'
         }
       },
@@ -360,9 +398,28 @@ const i18n = {
       },
       footer: {
         slogan: 'Интелигентна автоматизация за вашия растеж.',
+        menu: 'Меню',
+        services: 'Услуги',
+        socials: 'Социални мрежи',
         contacts: 'Контакти',
         location: 'София, България (Online worldwide)',
+        privacy: 'Политика за поверителност',
         copyright: '© 2025 AI4Y. Всички права запазени.'
+      },
+      cookies: {
+        text: 'Използваме бисквитки за подобряване на работата на сайта. Продължавайки да използвате сайта, се съгласявате с нашата',
+        link: 'политика за поверителност',
+        btn: 'Разбрах'
+      },
+      privacy: {
+        title: 'Политика за поверителност',
+        intro: 'Ние се отнасяме сериозно към вашата поверителност. Този сайт събира минимално необходимото количество данни за функциониране.',
+        dataCollection: 'Събиране на данни',
+        dataText: 'Събираме само данни, които доброволно предоставяте чрез форми за контакт (име, контакти). Тези данни се използват само за връзка с вас.',
+        cookiesTitle: 'Бисквитки',
+        cookiesText: 'Използваме технически бисквитки за запазване на настройките (напр. избран език). Не използваме рекламни тракери на трети страни.',
+        rights: 'Вашите права',
+        rightsText: 'Можете да поискате изтриване на вашите данни по всяко време, като ни пишете на contact@ai4y.com.'
       }
     }
   },
