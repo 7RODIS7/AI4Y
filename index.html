@@ -29,14 +29,15 @@
   <!-- Navigation -->
   <header class="header" id="top">
     <div class="container header__container">
-      <a href="#" class="logo">AI4Y</a>
+      <a href="#home" class="logo">AI4Y</a>
       
       <nav class="nav desktop-only">
         <a href="#problems" class="nav__link" data-i18n="nav.problems">Задачи</a>
         <a href="#services" class="nav__link" data-i18n="nav.solutions">Решения</a>
+        <a href="#team" class="nav__link" data-i18n="nav.team">Команда</a>
         <a href="#comparison" class="nav__link" data-i18n="nav.comparison">Эффект</a>
         <a href="#process" class="nav__link" data-i18n="nav.process">Процесс</a>
-        <a href="#contact" class="btn btn--sm btn--primary" data-i18n="nav.contact">Обсудить проект</a>
+        <a href="#contact" class="btn btn--sm btn--primary" data-i18n="nav.contact">Обсудить задачу</a>
       </nav>
 
       <div class="header__controls">
@@ -235,6 +236,50 @@
       </div>
     </section>
     
+    <!-- Expertise / Team Section -->
+    <section id="team" class="section section--dark">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="team.title">Экспертиза Enterprise-уровня</h2>
+          <p class="section-desc" data-i18n="team.subtitle">Опыт работы в мировых технологических гигантах, адаптированный для вашего бизнеса</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Expert 1 -->
+          <div class="team-card">
+            <div class="team-card__header">
+              <div class="team-card__role" data-i18n="team.member1.role">Техническая Архитектура</div>
+              <h3 class="team-card__name" data-i18n="team.member1.name">AI & Engineering</h3>
+            </div>
+            <div class="team-card__body">
+              <!-- Badge removed as per request -->
+              <ul class="team-stats">
+                <li data-i18n="team.member1.stat1">12+ лет в Enterprise разработке</li>
+                <li data-i18n="team.member1.stat2">3 года R&D в области Generative AI</li>
+                <li data-i18n="team.member1.stat3">Архитектура масштабируемых решений</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Expert 2 -->
+          <div class="team-card">
+            <div class="team-card__header">
+              <div class="team-card__role" data-i18n="team.member2.role">Бизнес-процессы и Продажи</div>
+              <h3 class="team-card__name" data-i18n="team.member2.name">Business Development</h3>
+            </div>
+            <div class="team-card__body">
+              <!-- Badge removed as per request -->
+              <ul class="team-stats">
+                <li data-i18n="team.member2.stat1">Technical Sales Expert</li>
+                <li data-i18n="team.member2.stat2">Опыт в MUK и IBM</li>
+                <li data-i18n="team.member2.stat3">Построение B2B воронок продаж</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Before / After (Comparison) -->
     <section id="comparison" class="section section--dark">
       <div class="container">
@@ -243,64 +288,69 @@
           <p class="section-desc" data-i18n="comparison.subtitle">Наглядная разница между ручным трудом и AI-автоматизацией</p>
         </div>
 
-        <div class="comparison-grid">
-          <!-- Before -->
-          <div class="comparison-card comparison-card--before">
-            <div class="comparison-card__header">
-              <span class="badge badge--red">До AI</span>
-              <h3 data-i18n="comparison.before.title">Ручной хаос</h3>
-            </div>
-            <ul class="comparison-list">
-              <li>
-                <span class="icon">❌</span>
-                <span data-i18n="comparison.before.item1">2 часа в день на рутину</span>
-              </li>
-              <li>
-                <span class="icon">❌</span>
-                <span data-i18n="comparison.before.item2">Ответы клиентам за 2-4 часа</span>
-              </li>
-              <li>
-                <span class="icon">❌</span>
-                <span data-i18n="comparison.before.item3">Ошибки при переносе данных</span>
-              </li>
-              <li>
-                <span class="icon">❌</span>
-                <span data-i18n="comparison.before.item4">Выгорание сотрудников</span>
-              </li>
-            </ul>
+        <!-- New Mobile-First Grid Structure -->
+        <div class="comparison-wrapper">
+          
+          <!-- Header Labels (Desktop Only) -->
+          <div class="comparison-labels desktop-only">
+             <div class="c-label c-label--bad" data-i18n="comparison.before.title">Ручной хаос</div>
+             <div class="c-label c-label--good" data-i18n="comparison.after.title">Системный порядок</div>
           </div>
 
-          <!-- Arrow Mobile / Spacer Desktop -->
-          <div class="comparison-divider">
-            <div class="arrow-circle">➜</div>
+          <div class="comparison-list-v2">
+            <!-- Item 1 -->
+            <div class="c-item">
+              <div class="c-card c-card--bad">
+                <span class="c-icon">❌</span>
+                <span class="c-text" data-i18n="comparison.before.item1">2 часа в день на рутину</span>
+              </div>
+              <div class="c-connector">➜</div>
+              <div class="c-card c-card--good">
+                <span class="c-icon">✅</span>
+                <span class="c-text" data-i18n="comparison.after.item1">0 минут (полная автономия)</span>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="c-item">
+              <div class="c-card c-card--bad">
+                <span class="c-icon">❌</span>
+                <span class="c-text" data-i18n="comparison.before.item2">Ответы клиентам за 2-4 часа</span>
+              </div>
+              <div class="c-connector">➜</div>
+              <div class="c-card c-card--good">
+                <span class="c-icon">✅</span>
+                <span class="c-text" data-i18n="comparison.after.item2">Мгновенный ответ 24/7</span>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="c-item">
+              <div class="c-card c-card--bad">
+                <span class="c-icon">❌</span>
+                <span class="c-text" data-i18n="comparison.before.item3">Ошибки при переносе данных</span>
+              </div>
+              <div class="c-connector">➜</div>
+              <div class="c-card c-card--good">
+                <span class="c-icon">✅</span>
+                <span class="c-text" data-i18n="comparison.after.item3">Рост прибыли и скорости</span>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="c-item">
+              <div class="c-card c-card--bad">
+                <span class="c-icon">❌</span>
+                <span class="c-text" data-i18n="comparison.before.item4">Выгорание сотрудников</span>
+              </div>
+              <div class="c-connector">➜</div>
+              <div class="c-card c-card--good">
+                <span class="c-icon">✅</span>
+                <span class="c-text" data-i18n="comparison.after.item4">Фокус на стратегии</span>
+              </div>
+            </div>
           </div>
 
-          <!-- After -->
-          <div class="comparison-card comparison-card--after">
-            <div class="comparison-card__header">
-              <span class="badge badge--green">После AI</span>
-              <h3 data-i18n="comparison.after.title">Системный порядок</h3>
-            </div>
-            <ul class="comparison-list">
-              <li>
-                <span class="icon">✅</span>
-                <span data-i18n="comparison.after.item1">0 минут (полная автономия)</span>
-              </li>
-              <li>
-                <span class="icon">✅</span>
-                <span data-i18n="comparison.after.item2">Мгновенный ответ 24/7</span>
-              </li>
-              <li>
-                <span class="icon">✅</span>
-                <span data-i18n="comparison.after.item3">Рост прибыли и скорости</span>
-              </li>
-              <li>
-                <span class="icon">✅</span>
-                <span data-i18n="comparison.after.item4">Фокус на стратегии</span>
-              </li>
-            </ul>
-            <div class="glow-effect"></div>
-          </div>
         </div>
       </div>
     </section>
@@ -357,20 +407,31 @@
               <li data-i18n="cta.price3"><strong>Custom интеграция:</strong> индивидуальный расчет</li>
             </ul>
           </div>
-          <form class="cta-form" id="leadForm">
-            <h3 data-i18n="cta.form.title">Заявка на консультацию</h3>
-            <div class="form-group">
-              <input type="text" placeholder="Ваше имя" data-i18n-placeholder="cta.form.name" required>
+          
+          <!-- Form Container -->
+          <div class="form-wrapper">
+            <form class="cta-form" id="leadForm">
+              <h3 data-i18n="cta.form.title">Заявка на консультацию</h3>
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Ваше имя" data-i18n-placeholder="cta.form.name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="contact" name="contact" placeholder="Telegram или Email" data-i18n-placeholder="cta.form.contact" required>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Кратко о задаче (например: хочу бота для поддержки)" data-i18n-placeholder="cta.form.message"></textarea>
+              </div>
+              <button type="submit" class="btn btn--full btn--primary" data-i18n="cta.form.btn">Отправить</button>
+              <small class="form-note" data-i18n="cta.form.note">Мы свяжемся с вами в течение 24 часов</small>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" class="success-message" style="display: none;">
+              <div class="success-icon">✅</div>
+              <h3 data-i18n="cta.form.successTitle">Спасибо!</h3>
+              <p data-i18n="cta.form.successText">Ваша заявка успешно отправлена. Мы свяжемся с вами в течение 24 часов.</p>
             </div>
-            <div class="form-group">
-              <input type="text" placeholder="Telegram или Email" data-i18n-placeholder="cta.form.contact" required>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Кратко о задаче (например: хочу бота для поддержки)" data-i18n-placeholder="cta.form.message"></textarea>
-            </div>
-            <button type="submit" class="btn btn--full btn--primary" data-i18n="cta.form.btn">Отправить</button>
-            <small class="form-note" data-i18n="cta.form.note">Мы свяжемся с вами в течение 24 часов</small>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -382,7 +443,7 @@
       <div class="footer__grid">
         <!-- Brand Column -->
         <div class="footer__col footer__brand">
-          <a href="#top" class="logo">AI4Y<span class="logo__dot">.</span></a>
+          <a href="#home" class="logo">AI4Y<span class="logo__dot">.</span></a>
           <p class="footer__slogan" data-i18n="footer.slogan">Интеллектуальная автоматизация для вашего роста.</p>
           <div class="social-links">
             <!-- Telegram -->
@@ -406,6 +467,7 @@
           <ul class="footer__nav">
             <li><a href="#problems" data-i18n="nav.problems">Задачи</a></li>
             <li><a href="#services" data-i18n="nav.solutions">Решения</a></li>
+            <li><a href="#team" data-i18n="nav.team">Команда</a></li>
             <li><a href="#comparison" data-i18n="nav.comparison">Эффект</a></li>
             <li><a href="#process" data-i18n="nav.process">Процесс</a></li>
           </ul>
@@ -415,9 +477,10 @@
         <div class="footer__col">
           <h4 class="footer__title" data-i18n="footer.services">Услуги</h4>
           <ul class="footer__nav">
-            <li><a href="#services" data-i18n="services.tabs.assistants">Ассистенты</a></li>
-            <li><a href="#services" data-i18n="services.tabs.automation">Автоматизация</a></li>
-            <li><a href="#services" data-i18n="services.tabs.content">Контент</a></li>
+            <li><a href="#services" data-tab-target="assistants" data-i18n="services.tabs.assistants">Ассистенты</a></li>
+            <li><a href="#services" data-tab-target="automation" data-i18n="services.tabs.automation">Автоматизация</a></li>
+            <li><a href="#services" data-tab-target="content" data-i18n="services.tabs.content">Контент</a></li>
+            <li><a href="#services" data-tab-target="special" data-i18n="services.tabs.special">Спец. Решения</a></li>
           </ul>
         </div>
 

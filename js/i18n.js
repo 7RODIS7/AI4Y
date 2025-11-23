@@ -15,12 +15,15 @@ const i18n = {
         solutions: 'Решения',
         comparison: 'Эффект',
         process: 'Процесс',
-        contact: 'Обсудить проект'
+        team: 'Команда',
+        contact: 'Обсудить задачу',
+        home: 'Главная',
+        info: 'Инфо'
       },
       hero: {
         badge: 'AI Консультация, Интеграция, Автоматизация',
         title: 'Автоматизация бизнеса',
-        titleHighlight: 'силой искусственного интеллекта',
+        titleHighlight: 'на базе AI',
         subtitle: 'Превращаем хаос рутины в структурированные процессы. Внедряем AI-ассистентов, чат-ботов и автоматизируем рабочие потоки под ключ.',
         ctaConsult: 'Заказать консультацию',
         ctaMore: 'Смотреть возможности'
@@ -78,22 +81,40 @@ const i18n = {
           item3: { title: 'Векторные базы знаний', text: 'Создание и поддержка корпоративных баз знаний под ключ.' }
         }
       },
+      team: {
+        title: 'Экспертиза Enterprise-уровня',
+        subtitle: 'Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK), доступный вашему бизнесу',
+        member1: {
+          role: 'Техническая Архитектура',
+          name: 'Lead AI Engineer',
+          stat1: '12+ лет в Enterprise разработке',
+          stat2: '3 года R&D в области Generative AI',
+          stat3: 'Архитектура масштабируемых решений'
+        },
+        member2: {
+          role: 'Стратегия и Процессы',
+          name: 'Business Development',
+          stat1: 'Technical Sales Expert',
+          stat2: 'Многолетний опыт в дистрибуции',
+          stat3: 'Построение эффективных B2B продаж'
+        }
+      },
       comparison: {
         title: 'Результат внедрения',
         subtitle: 'Наглядная разница между ручным трудом и AI-автоматизацией',
         before: {
           title: 'Ручной хаос',
-          item1: '2 часа в день на рутину',
-          item2: 'Ответы клиентам за 2-4 часа',
-          item3: 'Ошибки при переносе данных',
-          item4: 'Выгорание сотрудников'
+          item1: 'Ручной ввод и рутина',
+          item2: 'Долгое ожидание ответа',
+          item3: 'Человеческий фактор',
+          item4: 'Операционка и выгорание'
         },
         after: {
           title: 'Системный порядок',
-          item1: '0 минут (полная автономия)',
-          item2: 'Мгновенный ответ 24/7',
-          item3: 'Рост прибыли и скорости',
-          item4: 'Фокус на стратегии'
+          item1: 'Автоматизация процессов',
+          item2: 'Поддержка клиентов 24/7',
+          item3: 'Минимизация ошибок',
+          item4: 'Масштабирование бизнеса'
         }
       },
       process: {
@@ -115,7 +136,10 @@ const i18n = {
           contact: 'Telegram или Email',
           message: 'Кратко о задаче (например: хочу бота для поддержки)',
           btn: 'Отправить',
-          note: 'Мы свяжемся с вами в течение 24 часов'
+          note: 'Мы свяжемся с вами в течение 24 часов',
+          successTitle: 'Спасибо!',
+          successText: 'Ваша заявка успешно отправлена. Мы свяжемся с вами в течение 24 часов.',
+          errorText: 'Произошла ошибка. Попробуйте позже или напишите нам напрямую.'
         }
       },
       footer: {
@@ -130,7 +154,7 @@ const i18n = {
       },
       cookies: {
         text: 'Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с нашей',
-        link: 'политикой конфиденциальности',
+        link: 'политика за поверителност',
         btn: 'Хорошо'
       },
       privacy: {
@@ -154,7 +178,10 @@ const i18n = {
         solutions: 'Solutions',
         comparison: 'Impact',
         process: 'Process',
-        contact: 'Discuss Project'
+        team: 'Team',
+        contact: 'Discuss Challenge',
+        home: 'Home',
+        info: 'Info'
       },
       hero: {
         badge: 'AI Consulting, Integration, Automation',
@@ -217,22 +244,40 @@ const i18n = {
           item3: { title: 'Vector Knowledge Bases', text: 'Turnkey creation and support of corporate knowledge bases.' }
         }
       },
+      team: {
+        title: 'Enterprise-Level Expertise',
+        subtitle: 'Experience from global tech giants (Sitecore, IBM, MUK), adapted for your business',
+        member1: {
+          role: 'Technical Architecture',
+          name: 'Lead AI Engineer',
+          stat1: '12+ years in Enterprise development',
+          stat2: '3 years R&D in Generative AI',
+          stat3: 'Scalable Solution Architecture'
+        },
+        member2: {
+          role: 'Strategy & Processes',
+          name: 'Business Development',
+          stat1: 'Technical Sales Expert',
+          stat2: 'Years of distribution experience',
+          stat3: 'Building B2B sales pipelines'
+        }
+      },
       comparison: {
         title: 'Impact of AI',
         subtitle: 'Visible difference between manual work and AI automation',
         before: {
           title: 'Manual Chaos',
-          item1: '2 hours/day on routine',
-          item2: 'Client replies in 2-4 hours',
-          item3: 'Data entry errors',
-          item4: 'Employee burnout'
+          item1: 'Manual entry & routine',
+          item2: 'Long response times',
+          item3: 'Human factor',
+          item4: 'Operational burnout'
         },
         after: {
           title: 'Systematic Order',
-          item1: '0 minutes (full autonomy)',
-          item2: 'Instant 24/7 response',
-          item3: 'Profit & Speed Growth',
-          item4: 'Focus on strategy'
+          item1: 'Process Automation',
+          item2: '24/7 Support',
+          item3: 'Error Minimization',
+          item4: 'Business Scalability'
         }
       },
       process: {
@@ -254,7 +299,10 @@ const i18n = {
           contact: 'Telegram or Email',
           message: 'Briefly about the task (e.g., support bot wanted)',
           btn: 'Send Request',
-          note: 'We will contact you within 24 hours'
+          note: 'We will contact you within 24 hours',
+          successTitle: 'Thank you!',
+          successText: 'Your request has been sent successfully. We will contact you within 24 hours.',
+          errorText: 'An error occurred. Please try again later or contact us directly.'
         }
       },
       footer: {
@@ -293,12 +341,15 @@ const i18n = {
         solutions: 'Решения',
         comparison: 'Ефект',
         process: 'Процес',
-        contact: 'Обсъждане'
+        team: 'Екип',
+        contact: 'Обсъждане на задача',
+        home: 'Начало',
+        info: 'Инфо'
       },
       hero: {
         badge: 'AI Консултации, Интеграция, Автоматизация',
         title: 'Бизнес Автоматизация',
-        titleHighlight: 'със силата на изкуствения интелект',
+        titleHighlight: 'чрез AI',
         subtitle: 'Превръщаме хаоса от рутина в структурирани процеси. Внедряваме AI асистенти, чатботове и автоматизираме работни потоци до ключ.',
         ctaConsult: 'Заяви консултация',
         ctaMore: 'Виж възможностите'
@@ -340,7 +391,7 @@ const i18n = {
         },
         automation: {
           item1: { title: 'Обработка на заявки', text: 'Парсинг на заявки (текст/снимка) и автоматичен запис в CRM.' },
-          item2: { title: 'Синхронизация на данни', text: 'Импорт/експорт на продукти и поръчки между платформи.' },
+          item2: { title: 'Синхронизация на данни', text: 'Импорт/экспорт на продукти и поръчки между платформи.' },
           item3: { title: 'Генериране на документи', text: 'Автоматично създаване на оферти, фактури и презентации в PDF.' },
           item4: { title: 'Make / n8n Интеграции', text: 'Свързване на всякакви услуги чрез API в единна система.' }
         },
@@ -356,22 +407,40 @@ const i18n = {
           item3: { title: 'Векторни бази знания', text: 'Създаване и поддръжка на корпоративни бази знания до ключ.' }
         }
       },
+      team: {
+        title: 'Експертиза от Enterprise ниво',
+        subtitle: 'Опит от световни технологични гиганти (Sitecore, IBM, MUK), адаптиран за вашия бизнес',
+        member1: {
+          role: 'Техническа Архитектура',
+          name: 'Lead AI Engineer',
+          stat1: '12+ години в Enterprise разработка',
+          stat2: '3 години R&D в областта на Generative AI',
+          stat3: 'Архитектура на мащабируеми решения'
+        },
+        member2: {
+          role: 'Стратегия и Процеси',
+          name: 'Business Development',
+          stat1: 'Technical Sales Expert',
+          stat2: 'Многогодишен опит в дистрибуцията',
+          stat3: 'Изграждане на B2B продажби'
+        }
+      },
       comparison: {
         title: 'Резултат от внедряване',
         subtitle: 'Видима разлика между ръчен труд и AI автоматизация',
         before: {
           title: 'Ръчен хаос',
-          item1: '2 часа на ден за рутина',
-          item2: 'Отговор на клиенти за 2-4 часа',
-          item3: 'Грешки при прехвърляне на данни',
-          item4: 'Прегаряне на служители'
+          item1: 'Ръчно въвеждане и рутина',
+          item2: 'Бавни отговори',
+          item3: 'Човешки фактор',
+          item4: 'Оперативна работа'
         },
         after: {
           title: 'Системен ред',
-          item1: '0 минути (пълна автономия)',
-          item2: 'Мигновен отговор 24/7',
-          item3: 'Ръст на печалбата и скоростта',
-          item4: 'Фокус върху стратегията'
+          item1: 'Автоматизация на процеси',
+          item2: 'Поддръжка 24/7',
+          item3: 'Минимизиране на грешки',
+          item4: 'Мащабиране на бизнеса'
         }
       },
       process: {
@@ -393,7 +462,10 @@ const i18n = {
           contact: 'Telegram или Email',
           message: 'Накратко за задачата (напр: искам бот за поддръжка)',
           btn: 'Изпрати',
-          note: 'Ще се свържем с вас в рамките на 24 часа'
+          note: 'Ще се свържем с вас в рамките на 24 часа',
+          successTitle: 'Благодаря!',
+          successText: 'Вашата заявка е изпратена успешно. Ще се свържем с вас в рамките на 24 часа.',
+          errorText: 'Възникна грешка. Моля, опитайте по-късно или се свържете с нас директно.'
         }
       },
       footer: {
@@ -473,7 +545,17 @@ const i18n = {
       }
     });
 
-    // 3. Update Active State in Switcher
+    // 3. Update data-label (for tooltips)
+    const labeled = document.querySelectorAll('[data-i18n-label]');
+    labeled.forEach(el => {
+      const key = el.getAttribute('data-i18n-label');
+      const translation = this.t(key);
+      if (translation) {
+        el.setAttribute('data-label', translation);
+      }
+    });
+
+    // 4. Update Active State in Switcher
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
     });

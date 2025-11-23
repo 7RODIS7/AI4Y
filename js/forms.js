@@ -3,14 +3,20 @@
    ========================================================================== */
 
 const Forms = (() => {
+
+  const PLACEHOLDER_WEBHOOK = 'https://example.com/webhook-placeholder';
   
+  const CONFIG = {
+    webhookUrl: window.FORMS_WEBHOOK_URL || PLACEHOLDER_WEBHOOK
+  };
+
   /**
    * Инициализация обработки форм
    */
   function init() {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', handleFormSubmit);
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+      leadForm.addEventListener('submit', handleFormSubmit);
     }
   }
   
@@ -31,16 +37,20 @@ const Forms = (() => {
     
     // Получаем данные формы
     const formData = new FormData(form);
+    const currentLang = window.i18n ? window.i18n.getCurrentLang() : 'ru';
+
     const data = {
       name: formData.get('name'),
       contact: formData.get('contact'),
       message: formData.get('message') || 'Не указано',
+      lang: currentLang,
       timestamp: new Date().toISOString()
     };
     
     // Отключаем кнопку и показываем загрузку
     submitButton.disabled = true;
-    submitButton.textContent = 'Отправка...';
+    const originalBtnText = submitButton.textContent;
+    submitButton.textContent = '...';
     
     try {
       // Отправка формы
@@ -48,29 +58,25 @@ const Forms = (() => {
       
       if (response.success) {
         // Успех
-        form.reset();
-        successMessage.classList.add('show');
+        form.style.display = 'none';
+        if (successMessage) {
+          successMessage.style.display = 'block';
+        }
         
-        // Трекинг события
-        trackEvent(CONFIG.events.FORM_SUBMIT, {
-          name: data.name,
-          contact_type: data.contact.includes('@') ? 'email' : 'telegram'
-        });
+        // Трекинг события (если есть аналитика)
+        // trackEvent('form_submit', { ...data });
         
-        // Скрываем сообщение через 5 секунд
-        setTimeout(() => {
-          successMessage.classList.remove('show');
-        }, 5000);
       } else {
         throw new Error('Ошибка отправки формы');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже или свяжитесь напрямую через email/Telegram.');
-    } finally {
+      const errorText = window.i18n ? window.i18n.t('cta.form.errorText') : 'Ошибка отправки. Попробуйте позже.';
+      alert(errorText);
+      
       // Возвращаем кнопку в исходное состояние
       submitButton.disabled = false;
-      submitButton.textContent = 'Отправить заявку';
+      submitButton.textContent = originalBtnText;
     }
   }
   
@@ -82,95 +88,86 @@ const Forms = (() => {
     
     // Имя
     const nameInput = form.querySelector('#name');
-    if (!nameInput.value.trim()) {
+    if (nameInput && !nameInput.value.trim()) {
       showError(nameInput);
       isValid = false;
-    } else {
+    } else if (nameInput) {
       hideError(nameInput);
     }
     
     // Email или Telegram
     const contactInput = form.querySelector('#contact');
-    const contactValue = contactInput.value.trim();
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
-    const isTelegram = contactValue.startsWith('@') && contactValue.length > 1;
-    
-    if (!contactValue || (!isEmail && !isTelegram)) {
-      showError(contactInput);
-      isValid = false;
-    } else {
-      hideError(contactInput);
-    }
-    
-    // GDPR чекбокс
-    const gdprCheckbox = form.querySelector('#gdpr');
-    if (!gdprCheckbox.checked) {
-      const errorMessage = window.i18n?.translate('contact.gdprError') || 'Please confirm your consent to personal data processing';
-      alert(errorMessage);
-      isValid = false;
+    if (contactInput) {
+        const contactValue = contactInput.value.trim();
+        // Простая проверка: или email, или начинается с @ (telegram), или просто не пустой текст (гибко)
+        if (!contactValue) {
+            showError(contactInput);
+            isValid = false;
+        } else {
+            hideError(contactInput);
+        }
     }
     
     return isValid;
   }
   
   /**
-   * Показать ошибку поля
+   * Показать ошибку поля (визуально)
    */
   function showError(input) {
-    input.classList.add('error');
-    const errorMsg = input.nextElementSibling;
-    if (errorMsg && errorMsg.classList.contains('form-error')) {
-      errorMsg.style.display = 'block';
-    }
+    input.style.borderColor = '#ff4757';
+    input.classList.add('shake'); // Можно добавить анимацию тряски в CSS если нужно
+    setTimeout(() => input.classList.remove('shake'), 500);
   }
   
   /**
    * Скрыть ошибку поля
    */
   function hideError(input) {
-    input.classList.remove('error');
-    const errorMsg = input.nextElementSibling;
-    if (errorMsg && errorMsg.classList.contains('form-error')) {
-      errorMsg.style.display = 'none';
-    }
+    input.style.borderColor = '';
   }
   
   /**
-   * Отправка данных формы
+   * Отправка данных формы на Webhook
    */
   async function submitForm(data) {
-    // Вариант 1: Использование Formspree
-    // Замените YOUR_FORM_ID на ваш реальный ID из Formspree
-    /*
-    const response = await fetch(CONFIG.forms.submitEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-    return { success: response.ok };
-    */
-    
-    // Вариант 2: EmailJS (если используете)
-    /*
-    emailjs.init(CONFIG.forms.emailJSConfig.publicKey);
-    const response = await emailjs.send(
-      CONFIG.forms.emailJSConfig.serviceID,
-      CONFIG.forms.emailJSConfig.templateID,
-      data
-    );
-    return { success: true };
-    */
-    
-    // Вариант 3: Временное решение для демо (логирование в консоль)
-    console.log('Form Data:', data);
-    
-    // Симуляция отправки
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // TODO: Подключить реальный backend или сервис
-    return { success: true };
+    console.log('🚀 Starting form submission to:', CONFIG.webhookUrl);
+    console.log('📦 Data:', data);
+
+    if (!CONFIG.webhookUrl || CONFIG.webhookUrl === PLACEHOLDER_WEBHOOK) {
+      console.warn('Webhook URL is not configured. Set window.FORMS_WEBHOOK_URL before enabling form submissions.');
+      return { success: false, error: new Error('Webhook URL not configured') };
+    }
+
+    try {
+      // Используем URLSearchParams для отправки 'application/x-www-form-urlencoded'
+      const params = new URLSearchParams();
+      for (const key in data) {
+        params.append(key, data[key]);
+      }
+
+      // mode: 'no-cors' разрешает отправку запроса даже если сервер не присылает заголовки CORS.
+      // МИНУС: Мы не узнаем статус ответа (200 или 500), ответ будет "opaque" (непрозрачный).
+      // Но для вебхуков это часто единственный рабочий вариант с фронтенда.
+      const response = await fetch(CONFIG.webhookUrl, {
+        method: 'POST',
+        mode: 'no-cors', 
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params
+      });
+
+      console.log('✅ Request sent. Response type:', response.type);
+
+      // При mode: 'no-cors' ответ всегда opaque, статус 0. 
+      // Мы считаем это успехом, так как запрос ушел в сеть.
+      return { success: true };
+
+    } catch (error) {
+        console.error('❌ Network error during fetch:', error);
+        return { success: false, error: error };
+    }
   }
   
   return {
@@ -182,4 +179,3 @@ const Forms = (() => {
 document.addEventListener('DOMContentLoaded', () => {
   Forms.init();
 });
-

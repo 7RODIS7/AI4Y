@@ -40,6 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Handle external tab links (e.g. Footer)
+  document.querySelectorAll('[data-tab-target]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // The smooth scroll listener will handle the scrolling part because of href="#services"
+      // We just need to switch the tab
+      const tabId = link.getAttribute('data-tab-target');
+      const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+      if (tabBtn) {
+        tabBtn.click();
+      }
+    });
+  });
+
   // ==========================================================================
   // Mobile Menu Toggle
   // ==========================================================================
@@ -174,130 +187,167 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // Page Navigation (Dots) - Desktop Only
+  // Page Navigation (Dots + Arrows) - Desktop Only
   // ==========================================================================
   if (window.innerWidth >= 1024) {
     createPageNavigation();
   }
 
   function createPageNavigation() {
-    // Ensure footer has ID for nav
     const footer = document.querySelector('footer');
     if (footer && !footer.id) footer.id = 'footer';
 
-    // Select sections that matter for navigation
-    // Header is fixed, so we use the Hero section (id="home") as the top anchor
-    const sections = document.querySelectorAll('section[id], footer');
+    // 1. Collect sections
+    const sections = Array.from(document.querySelectorAll('section[id], footer'));
     
+    // 2. Create Nav Container
     const navContainer = document.createElement('div');
     navContainer.className = 'page-nav';
-    
+
+    // --- Prev Button ---
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'nav-btn nav-btn--prev hidden'; // Hidden initially
+    prevBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/></svg>`;
+    navContainer.appendChild(prevBtn);
+
+    // --- Dots ---
+    const dots = [];
     sections.forEach((section, index) => {
       const dot = document.createElement('div');
       dot.className = 'page-nav__dot';
       
-      // Determine label
-      let label = section.id || 'Home';
-      // Capitalize
-      label = label.charAt(0).toUpperCase() + label.slice(1);
-      
-      // Manual map for better labels
-      const labelMap = {
-        'home': 'Top',
-        'problems': 'Задачи',
-        'services': 'Решения',
-        'comparison': 'Эффект',
-        'process': 'Процесс',
-        'contact': 'Контакты',
-        'footer': 'Info'
+      // Labels
+      const keyMap = {
+        'home': 'nav.home',
+        'problems': 'nav.problems',
+        'services': 'nav.solutions',
+        'team': 'nav.team',
+        'comparison': 'nav.comparison',
+        'process': 'nav.process',
+        'contact': 'footer.contacts',
+        'footer': 'nav.info'
       };
-      if (labelMap[section.id]) label = labelMap[section.id];
+
+      let key = keyMap[section.id];
+      // Fallback if no key or section has weird id
+      let label = section.id ? (section.id.charAt(0).toUpperCase() + section.id.slice(1)) : 'Section';
       
-      dot.setAttribute('data-label', label);
+      if (key) {
+        dot.setAttribute('data-i18n-label', key);
+        // Set initial value from i18n if available
+        if (window.i18n) {
+          dot.setAttribute('data-label', window.i18n.t(key) || label);
+        } else {
+          dot.setAttribute('data-label', label);
+        }
+      } else {
+        dot.setAttribute('data-label', label);
+      }
+      
       dot.setAttribute('data-target', section.id);
       
-      if (index === 0) dot.classList.add('active');
-      
+      // Click handling
       dot.addEventListener('click', () => {
          section.scrollIntoView({ behavior: 'smooth' });
       });
       
       navContainer.appendChild(dot);
+      dots.push(dot);
     });
-    
+
+    // --- Next Button ---
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'nav-btn nav-btn--next';
+    nextBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    navContainer.appendChild(nextBtn);
+
     document.body.appendChild(navContainer);
-    
-    // Observer for dots
-    const dotsObserver = new IntersectionObserver((entries) => {
+
+    // 3. Logic: Intersection Observer
+    // This observer tracks which section is currently "most visible"
+    let currentIndex = 0;
+    const visibilityMap = new Map();
+
+    // Click Handlers (Define once, use current state)
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < sections.length - 1) {
+        sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    const observerCallback = (entries) => {
       entries.forEach(entry => {
+        const index = sections.indexOf(entry.target);
+        if (index === -1) return;
         if (entry.isIntersecting) {
-          // Find corresponding dot
-          const targetId = entry.target.id;
-          if (!targetId) return;
-          
-          // Update active class
-          document.querySelectorAll('.page-nav__dot').forEach(d => {
-             d.classList.toggle('active', d.getAttribute('data-target') === targetId);
-          });
+          visibilityMap.set(index, entry.intersectionRatio);
+        } else {
+          visibilityMap.set(index, 0);
         }
       });
-    }, { threshold: 0.1 }); // Lower threshold for footer
+
+      let maxRatio = 0;
+      let visibleIndex = currentIndex;
+      visibilityMap.forEach((ratio, idx) => {
+        if (ratio > maxRatio) {
+          maxRatio = ratio;
+          visibleIndex = idx;
+        }
+      });
+
+      if (visibleIndex !== currentIndex) {
+        currentIndex = visibleIndex;
+        updateUI(currentIndex);
+      }
+    };
+
+    const observerOptions = {
+      root: null,
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach((sec, idx) => {
+      visibilityMap.set(idx, 0);
+      observer.observe(sec);
+    });
+
+    // 4. Update UI Helper
+    function updateUI(index) {
+      // Update Dots
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+
+      // Update Arrows State (Don't hide, just disable)
+      // Prev Arrow
+      if (index <= 0) {
+        prevBtn.classList.add('disabled');
+        prevBtn.disabled = true;
+      } else {
+        prevBtn.classList.remove('disabled');
+        prevBtn.disabled = false;
+      }
+
+      // Next Arrow
+      if (index >= sections.length - 1) {
+        nextBtn.classList.add('disabled');
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.classList.remove('disabled');
+        nextBtn.disabled = false;
+      }
+    }
     
-    sections.forEach(s => dotsObserver.observe(s));
+    // Initial update
+    updateUI(0);
   }
-  
-  // ==========================================================================
-  // Auto-Add Scroll Hints (Next/Prev Section Arrows)
-  // ==========================================================================
-  const mainSections = document.querySelectorAll('section, header.header, footer'); // Include footer
-  const sectionsList = Array.from(mainSections); // Convert to array for index access
-
-  sectionsList.forEach((section, index) => {
-    // --- Next Arrow (Skip last) ---
-    if (index < sectionsList.length - 1) {
-      const nextSection = sectionsList[index + 1];
-      
-      const nextHint = document.createElement('div');
-      nextHint.className = 'scroll-hint scroll-hint--next';
-      nextHint.innerHTML = `
-        <span>Next</span>
-        <svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      `;
-      
-      nextHint.addEventListener('click', () => {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      });
-      
-      // Only append if section is relative/absolute positioned container
-      // Header might need special handling if it's fixed
-      if (!section.classList.contains('header')) {
-         section.appendChild(nextHint);
-      }
-    }
-
-    // --- Prev Arrow (Skip first) ---
-    if (index > 0) {
-      const prevSection = sectionsList[index - 1];
-      
-      // Skip if prev section is header (don't show "up" arrow on Hero section)
-      if (prevSection.classList.contains('header')) return;
-
-      const prevHint = document.createElement('div');
-      prevHint.className = 'scroll-hint scroll-hint--prev';
-      prevHint.innerHTML = `
-        <svg viewBox="0 0 24 24" style="transform: rotate(180deg)"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Prev</span>
-      `;
-      
-      prevHint.addEventListener('click', () => {
-        prevSection.scrollIntoView({ behavior: 'smooth' });
-      });
-
-      if (!section.classList.contains('header')) {
-        section.appendChild(prevHint);
-      }
-    }
-  });
 
   // ==========================================================================
   // Cookie Banner & Privacy Modal
