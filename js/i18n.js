@@ -83,7 +83,7 @@ const i18n = {
       },
       team: {
         title: 'Экспертиза Enterprise-уровня',
-        subtitle: 'Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK), доступный вашему бизнесу',
+        subtitle: 'Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK, AMI), доступный вашему бизнесу',
         member1: {
           role: 'Техническая Архитектура',
           name: 'Lead AI Engineer',
@@ -94,9 +94,9 @@ const i18n = {
         member2: {
           role: 'Стратегия и Процессы',
           name: 'Business Development',
-          stat1: 'Technical Sales Expert',
-          stat2: 'Многолетний опыт в дистрибуции',
-          stat3: 'Построение эффективных B2B продаж'
+          stat1: '18 лет опыта продаж IT решений',
+          stat2: 'Понимание бизнес-процессов и точек роста',
+          stat3: 'Повышение эффективности и надежности бизнеса'
         }
       },
       comparison: {
@@ -127,9 +127,9 @@ const i18n = {
       cta: {
         title: 'Готовы автоматизировать бизнес?',
         subtitle: 'Мы не продаем "кота в мешке". Стоимость зависит от сложности задачи.',
-        price1: '<strong>Консультация:</strong> от 50€ (разбор задачи, план действий)',
-        price2: '<strong>Demo решение:</strong> от 150€ (быстрый прототип)',
-        price3: '<strong>Custom интеграция:</strong> индивидуальный расчет',
+        price1: '<strong>Первичный аудит:</strong> Бесплатно (разбор задачи, поиск точек роста)',
+        price2: '<strong>MVP / Прототип:</strong> Фиксированная цена (быстрый результат за 3-5 дней)',
+        price3: '<strong>Комплексное внедрение:</strong> Индивидуальный расчет (под ключ)',
         form: {
           title: 'Заявка на консультацию',
           name: 'Ваше имя',
@@ -148,7 +148,9 @@ const i18n = {
         services: 'Услуги',
         socials: 'Мы в соцсетях',
         contacts: 'Контакты',
-        location: 'София, Болгария (Online worldwide)',
+        location1: 'София, Болгария',
+        location2: 'Торонто, Канада',
+        world: 'Online Worldwide',
         privacy: 'Политика конфиденциальности',
         copyright: '© 2025 AI4Y. All rights reserved.'
       },
@@ -246,7 +248,7 @@ const i18n = {
       },
       team: {
         title: 'Enterprise-Level Expertise',
-        subtitle: 'Experience from global tech giants (Sitecore, IBM, MUK), adapted for your business',
+        subtitle: 'Experience from global tech giants (Sitecore, IBM, MUK, AMI), adapted for your business',
         member1: {
           role: 'Technical Architecture',
           name: 'Lead AI Engineer',
@@ -257,9 +259,9 @@ const i18n = {
         member2: {
           role: 'Strategy & Processes',
           name: 'Business Development',
-          stat1: 'Technical Sales Expert',
-          stat2: 'Years of distribution experience',
-          stat3: 'Building B2B sales pipelines'
+          stat1: '18 years of IT Sales experience',
+          stat2: 'Understanding business efficiency & growth',
+          stat3: 'Increasing business efficiency and reliability'
         }
       },
       comparison: {
@@ -290,9 +292,9 @@ const i18n = {
       cta: {
         title: 'Ready to Automate?',
         subtitle: 'We don\'t sell "black boxes". Cost depends on task complexity.',
-        price1: '<strong>Consultation:</strong> from €50 (task analysis, action plan)',
-        price2: '<strong>Demo Solution:</strong> from €150 (quick prototype)',
-        price3: '<strong>Custom Integration:</strong> individual quote',
+        price1: '<strong>Initial Audit:</strong> Free (task analysis, finding growth points)',
+        price2: '<strong>MVP / Prototype:</strong> Fixed Price (quick result in 3-5 days)',
+        price3: '<strong>Complex Integration:</strong> Individual Quote (turnkey)',
         form: {
           title: 'Request Consultation',
           name: 'Your Name',
@@ -311,7 +313,9 @@ const i18n = {
         services: 'Services',
         socials: 'Socials',
         contacts: 'Contacts',
-        location: 'Sofia, Bulgaria (Online worldwide)',
+        location1: 'Sofia, Bulgaria',
+        location2: 'Toronto, Canada',
+        world: 'Online Worldwide',
         privacy: 'Privacy Policy',
         copyright: '© 2025 AI4Y. All rights reserved.'
       },
@@ -409,7 +413,7 @@ const i18n = {
       },
       team: {
         title: 'Експертиза от Enterprise ниво',
-        subtitle: 'Опит от световни технологични гиганти (Sitecore, IBM, MUK), адаптиран за вашия бизнес',
+        subtitle: 'Опит от световни технологични гиганти (Sitecore, IBM, MUK, AMI), адаптиран за вашия бизнес',
         member1: {
           role: 'Техническа Архитектура',
           name: 'Lead AI Engineer',
@@ -420,9 +424,9 @@ const i18n = {
         member2: {
           role: 'Стратегия и Процеси',
           name: 'Business Development',
-          stat1: 'Technical Sales Expert',
-          stat2: 'Многогодишен опит в дистрибуцията',
-          stat3: 'Изграждане на B2B продажби'
+          stat1: '18 години опит в IT продажбите',
+          stat2: 'Разбиране на бизнес ефективността',
+          stat3: 'Повишаване на ефективността и надеждността'
         }
       },
       comparison: {
@@ -453,9 +457,9 @@ const i18n = {
       cta: {
         title: 'Готови за автоматизация?',
         subtitle: 'Цената зависи от сложността на задачата.',
-        price1: '<strong>Консултация:</strong> от 50€ (анализ на задачата, план за действие)',
-        price2: '<strong>Demo решение:</strong> от 150€ (бърз прототип)',
-        price3: '<strong>Custom интеграция:</strong> индивидуална оферта',
+        price1: '<strong>Първоначален одит:</strong> Безплатно (анализ на задачата, точки за растеж)',
+        price2: '<strong>MVP / Прототип:</strong> Фиксирана цена (бърз резултат за 3-5 дни)',
+        price3: '<strong>Цялостно внедряване:</strong> Индивидуална оферта (до ключ)',
         form: {
           title: 'Заявка за консултация',
           name: 'Вашето име',
@@ -474,7 +478,9 @@ const i18n = {
         services: 'Услуги',
         socials: 'Социални мрежи',
         contacts: 'Контакти',
-        location: 'София, България (Online worldwide)',
+        location1: 'София, България',
+        location2: 'Торонто, Канада',
+        world: 'Online Worldwide',
         privacy: 'Политика за поверителност',
         copyright: '© 2025 AI4Y. Всички права запазени.'
       },

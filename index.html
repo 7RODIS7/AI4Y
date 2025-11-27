@@ -90,25 +90,41 @@
         <div class="problems-grid">
           <!-- Card 1 -->
           <div class="problem-card">
-            <div class="problem-card__icon">😫</div>
+            <div class="problem-card__icon">
+              <!-- Icon: Clock/Routine -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><path d="M4 12H2"/></svg>
+            </div>
             <h3 class="problem-card__title" data-i18n="problems.card1.title">Рутина съедает время</h3>
             <p class="problem-card__text" data-i18n="problems.card1.text">«Есть ли у вас монотонная работа, которая не требует навыков, но отнимает часы каждый день?»</p>
           </div>
           <!-- Card 2 -->
           <div class="problem-card">
-            <div class="problem-card__icon">📉</div>
+            <div class="problem-card__icon">
+              <!-- Icon: User Minus/Lost Lead -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="11" x2="23" y2="11"/></svg>
+            </div>
             <h3 class="problem-card__title" data-i18n="problems.card2.title">Потеря лидов</h3>
             <p class="problem-card__text" data-i18n="problems.card2.text">«Бывает ли, что клиент или заказ теряется в переписке, потому что менеджер забыл ответить?»</p>
           </div>
           <!-- Card 3 -->
           <div class="problem-card">
-            <div class="problem-card__icon">🤯</div>
+            <div class="problem-card__icon">
+              <!-- Icon: Database/Chaos (Fixed) - Stack with alert -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
             <h3 class="problem-card__title" data-i18n="problems.card3.title">Хаос в данных</h3>
             <p class="problem-card__text" data-i18n="problems.card3.text">«Приходится ли собирать данные вручную из разных таблиц и чатов для одного отчета?»</p>
           </div>
           <!-- Card 4 -->
           <div class="problem-card">
-            <div class="problem-card__icon">🐢</div>
+            <div class="problem-card__icon">
+              <!-- Icon: Message/Slow -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/></svg>
+            </div>
             <h3 class="problem-card__title" data-i18n="problems.card4.title">Медленная поддержка</h3>
             <p class="problem-card__text" data-i18n="problems.card4.text">«Клиенты ждут ответа часами, хотя спрашивают одно и то же (цены, сроки, адрес)?»</p>
           </div>
@@ -137,22 +153,30 @@
             <div class="tab-pane active" id="assistants">
               <div class="services-list">
                 <div class="service-item">
-                  <span class="service-icon">💬</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </span>
                   <h4 data-i18n="services.assistants.item1.title">AI Чат-боты для клиентов</h4>
                   <p data-i18n="services.assistants.item1.text">FAQ, поддержка 24/7, квалификация лидов.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🧠</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  </span>
                   <h4 data-i18n="services.assistants.item2.title">RAG Боты (База знаний)</h4>
                   <p data-i18n="services.assistants.item2.text">Поиск ответов по вашим PDF, Google Docs и сайту.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🤖</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+                  </span>
                   <h4 data-i18n="services.assistants.item3.title">Внутренние ассистенты</h4>
                   <p data-i18n="services.assistants.item3.text">Помощники для сотрудников: поиск по регламентам, онбординг.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">📨</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </span>
                   <h4 data-i18n="services.assistants.item4.title">Умные автоответчики</h4>
                   <p data-i18n="services.assistants.item4.text">Анализ входящих тикетов и генерация черновиков ответов.</p>
                 </div>
@@ -163,22 +187,30 @@
             <div class="tab-pane" id="automation">
               <div class="services-list">
                 <div class="service-item">
-                  <span class="service-icon">⚡</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  </span>
                   <h4 data-i18n="services.automation.item1.title">Обработка заявок</h4>
                   <p data-i18n="services.automation.item1.text">Парсинг заявок (текст/фото) и автоматическая запись в CRM.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🔄</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>
+                  </span>
                   <h4 data-i18n="services.automation.item2.title">Синхронизация данных</h4>
                   <p data-i18n="services.automation.item2.text">Импорт/экспорт товаров и заказов между площадками.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">📄</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  </span>
                   <h4 data-i18n="services.automation.item3.title">Генерация документов</h4>
                   <p data-i18n="services.automation.item3.text">Автоформирование КП, инвойсов и презентаций в PDF.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🔗</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  </span>
                   <h4 data-i18n="services.automation.item4.title">Make / n8n Интеграции</h4>
                   <p data-i18n="services.automation.item4.text">Связка любых сервисов по API в единую систему.</p>
                 </div>
@@ -189,22 +221,30 @@
             <div class="tab-pane" id="content">
               <div class="services-list">
                 <div class="service-item">
-                  <span class="service-icon">📝</span>
+                  <span class="service-icon">
+                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                  </span>
                   <h4 data-i18n="services.content.item1.title">Генерация статей и постов</h4>
                   <p data-i18n="services.content.item1.text">SEO-контент, посты для соцсетей, описания товаров.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🔍</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  </span>
                   <h4 data-i18n="services.content.item2.title">Сентимент-анализ</h4>
                   <p data-i18n="services.content.item2.text">Анализ отзывов и сообщений: определение тональности и намерений.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">✂️</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                  </span>
                   <h4 data-i18n="services.content.item3.title">Суммаризация</h4>
                   <p data-i18n="services.content.item3.text">Краткая выжимка из длинных текстов, встреч и документов.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🌍</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </span>
                   <h4 data-i18n="services.content.item4.title">Перевод и Улучшение</h4>
                   <p data-i18n="services.content.item4.text">Proofreading, humanize текстов, адаптация под стиль бренда.</p>
                 </div>
@@ -215,17 +255,23 @@
             <div class="tab-pane" id="special">
               <div class="services-list">
                 <div class="service-item">
-                  <span class="service-icon">🏘️</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  </span>
                   <h4 data-i18n="services.special.item1.title">Ассистент Риелтора</h4>
                   <p data-i18n="services.special.item1.text">Подбор объектов, ответы по каталогу, планирование показов.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">🛒</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  </span>
                   <h4 data-i18n="services.special.item2.title">E-commerce Ассистент</h4>
                   <p data-i18n="services.special.item2.text">Управление ценами, описаниями и автопостинг товаров.</p>
                 </div>
                 <div class="service-item">
-                  <span class="service-icon">📚</span>
+                  <span class="service-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-8.5 5v10l8.5 5 8.5-5V7L12 2z"></path><polyline points="12 22 12 12"></polyline><polyline points="20.5 7 12 12 3.5 7"></polyline><polyline points="12 12 12 2"></polyline></svg>
+                  </span>
                   <h4 data-i18n="services.special.item3.title">Векторные базы знаний</h4>
                   <p data-i18n="services.special.item3.text">Создание и поддержка корпоративных баз знаний под ключ.</p>
                 </div>
@@ -241,7 +287,7 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title" data-i18n="team.title">Экспертиза Enterprise-уровня</h2>
-          <p class="section-desc" data-i18n="team.subtitle">Опыт работы в мировых технологических гигантах, адаптированный для вашего бизнеса</p>
+          <p class="section-desc" data-i18n="team.subtitle">Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK, AMI), доступный вашему бизнесу</p>
         </div>
 
         <div class="team-grid">
@@ -264,15 +310,15 @@
           <!-- Expert 2 -->
           <div class="team-card">
             <div class="team-card__header">
-              <div class="team-card__role" data-i18n="team.member2.role">Бизнес-процессы и Продажи</div>
+              <div class="team-card__role" data-i18n="team.member2.role">Стратегия и Процессы</div>
               <h3 class="team-card__name" data-i18n="team.member2.name">Business Development</h3>
             </div>
             <div class="team-card__body">
               <!-- Badge removed as per request -->
               <ul class="team-stats">
-                <li data-i18n="team.member2.stat1">Technical Sales Expert</li>
-                <li data-i18n="team.member2.stat2">Опыт в MUK и IBM</li>
-                <li data-i18n="team.member2.stat3">Построение B2B воронок продаж</li>
+                <li data-i18n="team.member2.stat1">18 лет опыта продаж IT решений</li>
+                <li data-i18n="team.member2.stat2">Понимание бизнес-процессов и точек роста</li>
+                <li data-i18n="team.member2.stat3">Повышение эффективности и надежности бизнеса</li>
               </ul>
             </div>
           </div>
@@ -301,12 +347,18 @@
             <!-- Item 1 -->
             <div class="c-item">
               <div class="c-card c-card--bad">
-                <span class="c-icon">❌</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.before.item1">2 часа в день на рутину</span>
               </div>
-              <div class="c-connector">➜</div>
+              <div class="c-connector">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
               <div class="c-card c-card--good">
-                <span class="c-icon">✅</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.after.item1">0 минут (полная автономия)</span>
               </div>
             </div>
@@ -314,12 +366,18 @@
             <!-- Item 2 -->
             <div class="c-item">
               <div class="c-card c-card--bad">
-                <span class="c-icon">❌</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.before.item2">Ответы клиентам за 2-4 часа</span>
               </div>
-              <div class="c-connector">➜</div>
+              <div class="c-connector">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
               <div class="c-card c-card--good">
-                <span class="c-icon">✅</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.after.item2">Мгновенный ответ 24/7</span>
               </div>
             </div>
@@ -327,12 +385,18 @@
             <!-- Item 3 -->
             <div class="c-item">
               <div class="c-card c-card--bad">
-                <span class="c-icon">❌</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.before.item3">Ошибки при переносе данных</span>
               </div>
-              <div class="c-connector">➜</div>
+              <div class="c-connector">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
               <div class="c-card c-card--good">
-                <span class="c-icon">✅</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.after.item3">Рост прибыли и скорости</span>
               </div>
             </div>
@@ -340,12 +404,18 @@
             <!-- Item 4 -->
             <div class="c-item">
               <div class="c-card c-card--bad">
-                <span class="c-icon">❌</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.before.item4">Выгорание сотрудников</span>
               </div>
-              <div class="c-connector">➜</div>
+              <div class="c-connector">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
               <div class="c-card c-card--good">
-                <span class="c-icon">✅</span>
+                <span class="c-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </span>
                 <span class="c-text" data-i18n="comparison.after.item4">Фокус на стратегии</span>
               </div>
             </div>
@@ -402,9 +472,9 @@
               Мы не продаем "кота в мешке". Стоимость зависит от сложности задачи.
             </p>
             <ul class="pricing-simple">
-              <li data-i18n="cta.price1"><strong>Консультация:</strong> от 50€ (разбор задачи, план действий)</li>
-              <li data-i18n="cta.price2"><strong>Demo решение:</strong> от 150€ (быстрый прототип)</li>
-              <li data-i18n="cta.price3"><strong>Custom интеграция:</strong> индивидуальный расчет</li>
+              <li data-i18n="cta.price1"><strong>Первичный аудит:</strong> Бесплатно (разбор задачи, поиск точек роста)</li>
+              <li data-i18n="cta.price2"><strong>MVP / Прототип:</strong> Фиксированная цена (быстрый результат за 3-5 дней)</li>
+              <li data-i18n="cta.price3"><strong>Комплексное внедрение:</strong> Индивидуальный расчет (под ключ)</li>
             </ul>
           </div>
           
@@ -489,13 +559,31 @@
           <h4 class="footer__title" data-i18n="footer.contacts">Контакты</h4>
           <ul class="footer__contact-list">
             <li class="icon-text">
-              <span>📍</span> <span data-i18n="footer.location">София, Болгария</span>
+              <span class="footer-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <div class="location-group">
+                 <span data-i18n="footer.location1">София, Болгария</span><br>
+                 <span data-i18n="footer.location2">Торонто, Канада</span>
+              </div>
             </li>
             <li class="icon-text">
-              <span>📧</span> <a href="mailto:contact@ai4y.com">contact@ai4y.com</a>
+              <span class="footer-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </span>
+              <span data-i18n="footer.world">Online Worldwide</span>
             </li>
             <li class="icon-text">
-              <span>💬</span> <a href="#">@ai4y_support</a>
+              <span class="footer-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <a href="mailto:contact@ai4y.com">contact@ai4y.com</a>
+            </li>
+            <li class="icon-text">
+              <span class="footer-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </span>
+              <a href="https://t.me/ai4y_support" target="_blank" rel="noopener noreferrer">@ai4y_support</a>
             </li>
           </ul>
         </div>

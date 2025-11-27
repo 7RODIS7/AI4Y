@@ -7,6 +7,7 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 a {
@@ -33,6 +34,10 @@ ul {
 .section {
   padding: 100px 0;
   position: relative;
+  /* Ensure content is centered vertically for snap */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section--dark {
@@ -81,6 +86,20 @@ ul {
   overflow: hidden;
 }
 
+/* Noise Overlay */
+.background-fx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05; /* Adjust for visibility */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 2;
+  pointer-events: none;
+}
+
 .fx-grid {
   position: absolute;
   width: 200%;
@@ -93,6 +112,7 @@ ul {
   background-size: 50px 50px;
   transform: perspective(500px) rotateX(60deg);
   opacity: 0.3;
+  will-change: transform;
 }
 
 .fx-orb {
@@ -101,6 +121,7 @@ ul {
   filter: blur(80px);
   opacity: 0.4;
   animation: float 20s infinite ease-in-out;
+  will-change: transform;
 }
 
 .fx-orb--1 {
@@ -123,6 +144,26 @@ ul {
 @keyframes float {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(50px, 50px); }
+}
+
+/* ==========================================================================
+   Animations & Transitions
+   ========================================================================== */
+/* Section Content Reveal */
+.reveal-content {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  filter: blur(5px);
+  transition: 
+    opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 1s ease;
+}
+
+.reveal-content.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 /* ==========================================================================
@@ -156,14 +197,53 @@ ul {
 }
 
 .btn--primary {
-  background: var(--gradient-main);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+  background: linear-gradient(135deg, #1e3a8a 0%, #9333ea 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект блика при наведении (Sheen) */
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.btn--primary:hover::after {
+  animation: sheen 0.7s ease-in-out;
+}
+
+@keyframes sheen {
+  0% { left: -100%; }
+  100% { left: 200%; }
 }
 
 .btn--glass {
@@ -269,7 +349,7 @@ ul {
 
 .lang-btn.active {
   background: var(--color-primary);
-  color: #000; /* Black text on neon blue for contrast */
+  color: #000; 
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
 }
 
@@ -395,7 +475,7 @@ ul {
   display: flex;
   border-bottom: 1px solid var(--color-border);
   overflow-x: auto;
-  scrollbar-width: none; /* Hide scrollbar */
+  scrollbar-width: none;
 }
 
 .tab-btn {
@@ -490,7 +570,7 @@ ul {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
-  padding: 30px; /* Reduce padding for mobile fit */
+  padding: 30px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -560,7 +640,7 @@ ul {
 }
 
 /* ==========================================================================
-   Comparison / Before-After (New Mobile-First)
+   Comparison / Before-After
    ========================================================================== */
 .comparison-wrapper {
   max-width: 900px;
@@ -597,7 +677,6 @@ ul {
   position: relative;
 }
 
-/* Mobile Layout for Items */
 @media (max-width: 768px) {
   .c-item {
     flex-direction: column;
@@ -614,7 +693,6 @@ ul {
     margin: 5px 0;
   }
   
-  /* Hide main labels on mobile as they are contextually distant */
   .comparison-labels { display: none; }
 }
 
@@ -635,6 +713,10 @@ ul {
   border-left: 3px solid #ff4757;
 }
 
+.c-card--bad .c-icon {
+  color: #ff4757;
+}
+
 .c-card--bad:hover {
   background: rgba(255, 71, 87, 0.05);
 }
@@ -643,6 +725,10 @@ ul {
   border-left: 3px solid #2ecc71;
   background: rgba(46, 204, 113, 0.05);
   box-shadow: 0 0 20px rgba(46, 204, 113, 0.05);
+}
+
+.c-card--good .c-icon {
+  color: #2ecc71;
 }
 
 .c-card--good:hover {
@@ -666,7 +752,6 @@ ul {
   opacity: 0.5;
 }
 
-/* Desktop specific tweaks */
 @media (min-width: 769px) {
   .c-item:hover .c-card--bad { opacity: 0.5; }
   .c-item:hover .c-card--good { transform: scale(1.02); }
@@ -685,7 +770,6 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  /* Glass background for the whole nav pill */
   background: rgba(0, 0, 0, 0.2);
   padding: 15px 8px;
   border-radius: 30px;
@@ -693,7 +777,6 @@ ul {
   backdrop-filter: blur(5px);
 }
 
-/* Dots */
 .page-nav__dot {
   width: 10px;
   height: 10px;
@@ -716,7 +799,6 @@ ul {
   transform: scale(1.3);
 }
 
-/* Tooltips for dots */
 .page-nav__dot::before {
   content: attr(data-label);
   position: absolute;
@@ -738,7 +820,6 @@ ul {
   opacity: 1;
 }
 
-/* Integrated Arrows */
 .nav-btn {
   background: transparent;
   border: none;
@@ -778,20 +859,18 @@ ul {
   .page-nav { display: none; }
 }
 
-/* Desktop Grid Fix */
 @media (min-width: 1024px) {
   .problems-grid {
     grid-template-columns: repeat(4, 1fr);
   }
   
-  /* Increase section padding to avoid overlap with nav elements */
   .section {
     padding: 120px 0;
   }
 }
 
 /* ==========================================================================
-   Process Steps (Improved)
+   Process Steps
    ========================================================================== */
 .process-steps {
   display: grid;
@@ -806,7 +885,7 @@ ul {
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  overflow: hidden; /* Ensures number doesn't spill out */
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -815,20 +894,20 @@ ul {
 
 .step__num {
   font-family: var(--font-family-mono);
-  font-size: 6rem; /* Increased size for watermark effect */
+  font-size: 6rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.03); /* Subtle opacity */
+  color: rgba(255, 255, 255, 0.03);
   position: absolute;
   top: -10px;
   right: 10px;
   line-height: 1;
-  z-index: 0; /* Behind text */
+  z-index: 0;
   pointer-events: none;
 }
 
 .step__content {
   position: relative;
-  z-index: 1; /* Text above number */
+  z-index: 1;
 }
 
 .step h3 {
@@ -973,7 +1052,6 @@ ul {
   font-size: 0.9rem;
   color: var(--color-text-muted);
   position: relative;
-  /* Make footer act like a full section for scroll snap */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1032,20 +1110,40 @@ ul {
 
 .footer__nav a:hover {
   color: var(--color-primary);
-  padding-left: 5px;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  /* padding-left eliminated to prevent jump */
+}
+
+.footer__contact-list a {
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer__contact-list a:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  border-bottom-color: var(--color-primary);
 }
 
 .footer__contact-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align to top for multi-line location */
   gap: 10px;
 }
 
-.icon-text span:first-child {
-  font-size: 1.2rem;
+.footer-icon {
+  color: var(--color-primary);
+  min-width: 20px;
+  display: flex;
+  margin-top: 2px; /* Visual alignment */
 }
 
-/* Social Links */
+.location-group {
+  line-height: 1.4;
+}
+
 .social-links {
   display: flex;
   gap: 15px;
@@ -1091,10 +1189,9 @@ ul {
   text-decoration-color: var(--color-primary);
 }
 
-/* Mobile Footer */
 @media (max-width: 768px) {
   .footer {
-    padding: 60px 0 100px; /* Extra padding for nav/scroll */
+    padding: 60px 0 100px;
   }
 
   .footer__grid {
@@ -1118,7 +1215,7 @@ ul {
   }
   
   .footer__col:not(.footer__brand) {
-    text-align: center; /* Center other cols on mobile */
+    text-align: center;
   }
   
   .footer__bottom {
@@ -1143,7 +1240,7 @@ ul {
   backdrop-filter: blur(10px);
   transform: translateY(100%);
   transition: transform 0.4s ease-out;
-  display: none; /* Hidden by default logic, showed by JS */
+  display: none;
 }
 
 .cookie-banner.active {
@@ -1261,63 +1358,13 @@ ul {
   margin-bottom: 15px;
 }
 
-/* ==========================================================================
-   Tech Stack
-   ========================================================================== */
-.tech-stack-wrapper {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  animation: fadeIn 1s ease;
-}
-
-.tech-label {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  opacity: 0.7;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.tech-badge {
-  padding: 6px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.03);
-  transition: var(--transition-fast);
-}
-
-.tech-badge:hover {
-  border-color: var(--color-primary);
-  color: #fff;
-  background: rgba(0, 240, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   Mobile Responsive (Fixed)
-   ========================================================================== */
 @media (max-width: 768px) {
   .desktop-only { display: none; }
   .mobile-only { display: block; }
   
-  /* Layout & Containers */
   .container { padding: 0 20px; }
   .section { padding: 60px 0; }
   
-  /* Header */
   .header__container { padding: 0 20px; }
   
   .menu-toggle {
@@ -1339,9 +1386,8 @@ ul {
     transition: 0.3s;
   }
 
-  /* Hero Fixes */
   .hero {
-    min-height: auto; /* Fix 100vh overlap issues */
+    min-height: auto;
     padding-top: 140px;
     padding-bottom: 60px;
     height: auto;
@@ -1366,18 +1412,6 @@ ul {
     width: 100%;
   }
 
-  /* Comparison Grid Fixes */
-  .comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .arrow-right { 
-    transform: rotate(90deg); 
-    margin: 10px 0; 
-  }
-
-  /* Process Steps Fixes (No Overlap) */
   .process-steps {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1390,7 +1424,7 @@ ul {
   }
 
   .step__num {
-    position: relative; /* Stop absolute positioning overlap */
+    position: relative;
     top: auto;
     right: auto;
     font-size: 3rem;
@@ -1399,7 +1433,6 @@ ul {
     color: var(--color-primary);
   }
   
-  /* CTA Box */
   .cta-box {
     grid-template-columns: 1fr;
     padding: 30px 20px;
@@ -1410,7 +1443,6 @@ ul {
     font-size: 1.75rem;
   }
   
-  /* Footer */
   .footer__container {
     flex-direction: column;
     gap: 40px;
@@ -1427,23 +1459,21 @@ ul {
     text-align: center;
   }
   
-  /* Tabs Scroll / Wrap for better mobile UX */
   .tabs__nav {
     justify-content: flex-start;
-    flex-wrap: wrap; /* Allow wrapping instead of scroll */
+    flex-wrap: wrap;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    /* -webkit-overflow-scrolling: touch; Remove scroll behavior */
-    gap: 10px; /* Add gap for wrapped items */
+    gap: 10px;
   }
   
   .tab-btn {
-    padding: 10px 16px; /* Smaller padding */
+    padding: 10px 16px;
     font-size: 0.85rem;
-    flex: 1 1 auto; /* Grow to fill space */
+    flex: 1 1 auto;
     text-align: center;
-    border-radius: var(--radius-sm); /* Add radius for button-like feel */
-    background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid transparent;
   }
   
@@ -1459,46 +1489,41 @@ ul {
 }
 
 /* ==========================================================================
-   Scroll Snap & Page Navigation (Next-Next Effect)
+   Scroll Snap
    ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+section, header, footer {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  /* Ensure sections don't overlap visually */
+  background-color: var(--color-bg); 
+  z-index: 1;
+  position: relative;
+}
+
+/* Exceptions for header which is fixed */
+header {
+  min-height: auto;
+  background: none; /* Handled by .header class */
+  z-index: 1000;
+}
+
+/* Exception for footer if content is short, but keep min-height for snap */
+footer {
+  /* Background color already set in .footer class */
+}
+
 @media (min-width: 1024px) {
-  html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    overflow-y: scroll;
-  }
-
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* Make sections full height and snappable */
-  section, header, footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  /* Ensure sections take full screen but allow content flow if larger */
-  section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Ensure padding doesn't break vh calc */
-    box-sizing: border-box; 
-  }
-  
-  /* Footer might be smaller, but let's snap it too or leave it flow with last section?
-     Better to snap footer as a "slide" */
-  .footer {
-    min-height: auto; /* Use auto so it doesn't stretch if not needed */
-    scroll-snap-align: end;
-    padding-bottom: 60px; /* Extra padding at bottom */
-  }
-  
-  /* Page Navigation Dots */
   .page-nav {
     position: fixed;
     right: 30px;
@@ -1531,7 +1556,6 @@ ul {
     transform: scale(1.2);
   }
   
-  /* Tooltip on hover */
   .page-nav__dot::before {
     content: attr(data-label);
     position: absolute;
@@ -1554,10 +1578,9 @@ ul {
   }
 }
 
-/* Mobile: Disable strict snap to avoid UX issues with large content */
 @media (max-width: 1023px) {
   html {
-    scroll-snap-type: y proximity; /* Softer snap */
+    scroll-snap-type: y proximity;
   }
   section {
     scroll-snap-align: start;

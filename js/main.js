@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.classList.toggle('active');
       
       // If we're opening the menu, we might want to style the nav for mobile
-      // The CSS handles .mobile-only display, but we need a class for the nav itself when active on mobile
-      // Note: In css/main.css, I need to ensure .nav has a mobile state style
       if (nav.classList.contains('mobile-active')) {
         Object.assign(nav.style, {
           display: 'flex',
@@ -137,13 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
         
         setTimeout(() => {
-          // Restore original text (which might be translated)
-          // Better to re-fetch from i18n to be safe
           if (window.i18n) {
-             // We need to find the key for the button to restore it correctly
-             // For now just restoring the one stored at click time is okay, 
-             // but if lang changed mid-flight (unlikely) it might be off.
-             // Let's just use the attribute update method if available.
              const key = btn.getAttribute('data-i18n');
              if (key) {
                 btn.innerText = window.i18n.t(key);
@@ -162,28 +154,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // Intersection Observer for Animations
+  // Section Content Reveal (Soft Transition)
   // ==========================================================================
-  const observerOptions = {
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      // Find the container inside the section
+      const container = entry.target.querySelector('.container');
+      if (!container) return;
+
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
+        // Add visible class when section is in view
+        container.classList.add('visible');
+        container.classList.add('reveal-content'); // Ensure class is there
+      } else {
+        // Optional: Fade out when leaving to re-trigger effect on scroll back
+        // This makes the "transition" feel active both ways
+        container.classList.remove('visible');
       }
     });
-  }, observerOptions);
+  }, {
+    threshold: 0.15, // Trigger when 15% of section is visible
+    rootMargin: '-50px' // Offset to trigger slightly inward
+  });
 
-  // Animate cards and sections
-  document.querySelectorAll('.problem-card, .service-item, .step').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+  document.querySelectorAll('section, footer').forEach(section => {
+    const container = section.querySelector('.container');
+    if (container) {
+      container.classList.add('reveal-content');
+      revealObserver.observe(section);
+    }
+  });
+
+  // ==========================================================================
+  // Parallax Background
+  // ==========================================================================
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const fxGrid = document.querySelector('.fx-grid');
+    const fxOrbs = document.querySelectorAll('.fx-orb');
+
+    // Move grid slowly
+    if (fxGrid) {
+      fxGrid.style.transform = `perspective(500px) rotateX(60deg) translateY(${scrolled * 0.1}px)`;
+    }
+
+    // Move orbs at different speeds for depth
+    fxOrbs.forEach((orb, index) => {
+      const speed = index === 0 ? 0.05 : 0.08;
+      // Maintain float animation by adding translate
+      // Note: this overrides the CSS animation transform slightly, 
+      // so we apply the scroll parallax to the top/margin property or use a wrapper.
+      // Simpler approach: just transform.
+      // Since there is a CSS keyframe animation on transform, directly setting transform here conflicts.
+      // Better: Update top/bottom positions or use a wrapper. 
+      // Let's leave the CSS animation alone to avoid conflict and just move the grid.
+    });
   });
 
   // ==========================================================================
