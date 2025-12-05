@@ -85,18 +85,22 @@ const i18n = {
         title: 'Экспертиза Enterprise-уровня',
         subtitle: 'Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK, AMI), доступный вашему бизнесу',
         member1: {
-          role: 'Техническая Архитектура',
-          name: 'Lead AI Engineer',
+          name: 'AI & Technology',
           stat1: '12+ лет в Enterprise разработке',
           stat2: '3 года R&D в области Generative AI',
           stat3: 'Архитектура масштабируемых решений'
         },
         member2: {
-          role: 'Стратегия и Процессы',
-          name: 'Business Development',
+          name: 'Business & Strategy',
           stat1: '18 лет опыта продаж IT решений',
           stat2: 'Понимание бизнес-процессов и точек роста',
-          stat3: 'Повышение эффективности и надежности бизнеса'
+          stat3: 'Повышение эффективности бизнеса'
+        },
+        member3: {
+          name: 'Marketing & Brand',
+          stat1: 'Основатель I KNOW Corporate Culture Agency',
+          stat2: 'Брендинг, маркетинговые стратегии, PR',
+          stat3: 'Международный опыт, ориентация на результат'
         }
       },
       comparison: {
@@ -121,7 +125,7 @@ const i18n = {
         title: 'Как мы работаем',
         step1: { title: 'Аудит и Консультация', text: 'Разбираем ваши бизнес-процессы, находим "узкие горлышки" и точки роста.' },
         step2: { title: 'Прототип / Demo', text: 'Демонстрируем решение на ваших данных (MVP) или внедряем шаблоны.' },
-        step3: { title: 'Интеграция', text: 'Полноценное внедрение, настройка Make/n8n, подключение к API.' },
+        step3: { title: 'Интеграция и Автоматизация', text: 'Внедрение решений, настройка систем автоматизации, интеграция сервисов.' },
         step4: { title: 'Поддержка', text: 'Обучение сотрудников, мониторинг работы и доработки.' }
       },
       cta: {
@@ -250,18 +254,22 @@ const i18n = {
         title: 'Enterprise-Level Expertise',
         subtitle: 'Experience from global tech giants (Sitecore, IBM, MUK, AMI), adapted for your business',
         member1: {
-          role: 'Technical Architecture',
-          name: 'Lead AI Engineer',
+          name: 'AI & Technology',
           stat1: '12+ years in Enterprise development',
           stat2: '3 years R&D in Generative AI',
           stat3: 'Scalable Solution Architecture'
         },
         member2: {
-          role: 'Strategy & Processes',
-          name: 'Business Development',
+          name: 'Business & Strategy',
           stat1: '18 years of IT Sales experience',
           stat2: 'Understanding business efficiency & growth',
           stat3: 'Increasing business efficiency and reliability'
+        },
+        member3: {
+          name: 'Marketing & Brand',
+          stat1: 'Founder of I KNOW Corporate Culture Agency',
+          stat2: 'Branding, marketing strategies, PR',
+          stat3: 'International experience, result-oriented approach'
         }
       },
       comparison: {
@@ -286,7 +294,7 @@ const i18n = {
         title: 'How We Work',
         step1: { title: 'Audit & Consultation', text: 'We analyze your processes, finding bottlenecks and growth points.' },
         step2: { title: 'Prototype / Demo', text: 'We demonstrate the solution on your data (MVP) or implement templates.' },
-        step3: { title: 'Integration', text: 'Full implementation, Make/n8n setup, API connection.' },
+        step3: { title: 'Integration & Automation', text: 'Solution deployment, automation systems setup, service integration.' },
         step4: { title: 'Support', text: 'Employee training, monitoring, and refinements.' }
       },
       cta: {
@@ -415,18 +423,22 @@ const i18n = {
         title: 'Експертиза от Enterprise ниво',
         subtitle: 'Опит от световни технологични гиганти (Sitecore, IBM, MUK, AMI), адаптиран за вашия бизнес',
         member1: {
-          role: 'Техническа Архитектура',
-          name: 'Lead AI Engineer',
+          name: 'AI & Technology',
           stat1: '12+ години в Enterprise разработка',
           stat2: '3 години R&D в областта на Generative AI',
           stat3: 'Архитектура на мащабируеми решения'
         },
         member2: {
-          role: 'Стратегия и Процеси',
-          name: 'Business Development',
+          name: 'Business & Strategy',
           stat1: '18 години опит в IT продажбите',
           stat2: 'Разбиране на бизнес ефективността',
           stat3: 'Повишаване на ефективността и надеждността'
+        },
+        member3: {
+          name: 'Marketing & Brand',
+          stat1: 'Основател на I KNOW Corporate Culture Agency',
+          stat2: 'Брандинг, маркетингови стратегии, PR',
+          stat3: 'Международен опит, ориентиран към резултати'
         }
       },
       comparison: {
@@ -451,7 +463,7 @@ const i18n = {
         title: 'Как работим',
         step1: { title: 'Одит и Консултация', text: 'Разглеждаме вашите бизнес процеси, намираме "тесните места" и точките за растеж.' },
         step2: { title: 'Прототип / Demo', text: 'Демонстрираме решение с вашите данни (MVP) или внедряваме шаблони.' },
-        step3: { title: 'Интеграция', text: 'Пълноценно внедряване, настройка на Make/n8n, свързване с API.' },
+        step3: { title: 'Интеграция и Автоматизация', text: 'Внедряване на решения, настройка на системи за автоматизация, интеграция на услуги.' },
         step4: { title: 'Поддръжка', text: 'Обучение на служители, мониторинг на работата и доработки.' }
       },
       cta: {

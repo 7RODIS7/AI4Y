@@ -7,12 +7,14 @@
   
   /* Primary - Neon Blue/Cyan */
   --color-primary: #00f0ff;
+  --color-primary-rgb: 0, 240, 255;
   --color-primary-dark: #00a8b3;
   --color-primary-light: #6affff;
   --color-primary-glow: rgba(0, 240, 255, 0.5);
   
   /* Secondary - Neon Purple/Violet */
   --color-secondary: #bd00ff;
+  --color-secondary-rgb: 189, 0, 255;
   --color-secondary-dark: #8500b3;
   --color-secondary-light: #d966ff;
   --color-secondary-glow: rgba(189, 0, 255, 0.5);

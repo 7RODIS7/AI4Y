@@ -290,37 +290,58 @@
           <p class="section-desc" data-i18n="team.subtitle">Опыт работы в мировых технологических гигантах (Sitecore, IBM, MUK, AMI), доступный вашему бизнесу</p>
         </div>
 
-        <div class="team-grid">
+        <div class="expertise-grid">
           <!-- Expert 1 -->
-          <div class="team-card">
-            <div class="team-card__header">
-              <div class="team-card__role" data-i18n="team.member1.role">Техническая Архитектура</div>
-              <h3 class="team-card__name" data-i18n="team.member1.name">AI & Engineering</h3>
+          <div class="expertise-card">
+            <div class="expertise-card__glow"></div>
+            <div class="expertise-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
             </div>
-            <div class="team-card__body">
-              <!-- Badge removed as per request -->
-              <ul class="team-stats">
-                <li data-i18n="team.member1.stat1">12+ лет в Enterprise разработке</li>
-                <li data-i18n="team.member1.stat2">3 года R&D в области Generative AI</li>
-                <li data-i18n="team.member1.stat3">Архитектура масштабируемых решений</li>
-              </ul>
-            </div>
+            <h3 class="expertise-card__title" data-i18n="team.member1.name">AI & Technology</h3>
+            <ul class="expertise-card__list">
+              <li data-i18n="team.member1.stat1">12+ лет в Enterprise разработке</li>
+              <li data-i18n="team.member1.stat2">3 года R&D в области Generative AI</li>
+              <li data-i18n="team.member1.stat3">Архитектура масштабируемых решений</li>
+            </ul>
           </div>
 
           <!-- Expert 2 -->
-          <div class="team-card">
-            <div class="team-card__header">
-              <div class="team-card__role" data-i18n="team.member2.role">Стратегия и Процессы</div>
-              <h3 class="team-card__name" data-i18n="team.member2.name">Business Development</h3>
+          <div class="expertise-card">
+            <div class="expertise-card__glow"></div>
+            <div class="expertise-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
             </div>
-            <div class="team-card__body">
-              <!-- Badge removed as per request -->
-              <ul class="team-stats">
-                <li data-i18n="team.member2.stat1">18 лет опыта продаж IT решений</li>
-                <li data-i18n="team.member2.stat2">Понимание бизнес-процессов и точек роста</li>
-                <li data-i18n="team.member2.stat3">Повышение эффективности и надежности бизнеса</li>
-              </ul>
+            <h3 class="expertise-card__title" data-i18n="team.member2.name">Business & Strategy</h3>
+            <ul class="expertise-card__list">
+              <li data-i18n="team.member2.stat1">18 лет опыта продаж IT решений</li>
+              <li data-i18n="team.member2.stat2">Понимание бизнес-процессов и точек роста</li>
+              <li data-i18n="team.member2.stat3">Повышение эффективности бизнеса</li>
+            </ul>
+          </div>
+
+          <!-- Expert 3 -->
+          <div class="expertise-card">
+            <div class="expertise-card__glow"></div>
+            <div class="expertise-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
             </div>
+            <h3 class="expertise-card__title" data-i18n="team.member3.name">Marketing & Brand</h3>
+            <ul class="expertise-card__list">
+              <li data-i18n="team.member3.stat1">Основатель I KNOW Corporate Culture Agency</li>
+              <li data-i18n="team.member3.stat2">Брендинг, маркетинговые стратегии, PR</li>
+              <li data-i18n="team.member3.stat3">Международный опыт, ориентация на результат</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -429,31 +450,43 @@
     <section id="process" class="section">
       <div class="container">
         <h2 class="section-title text-center" data-i18n="process.title">Как мы работаем</h2>
-        <div class="process-steps">
-          <div class="step">
-            <div class="step__num">01</div>
-            <div class="step__content">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <span class="timeline__num">01</span>
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__content">
               <h3 data-i18n="process.step1.title">Аудит и Консультация</h3>
               <p data-i18n="process.step1.text">Разбираем ваши бизнес-процессы, находим "узкие горлышки" и точки роста.</p>
             </div>
           </div>
-          <div class="step">
-            <div class="step__num">02</div>
-            <div class="step__content">
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <span class="timeline__num">02</span>
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__content">
               <h3 data-i18n="process.step2.title">Прототип / Demo</h3>
               <p data-i18n="process.step2.text">Демонстрируем решение на ваших данных (MVP) или внедряем шаблоны.</p>
             </div>
           </div>
-          <div class="step">
-            <div class="step__num">03</div>
-            <div class="step__content">
-              <h3 data-i18n="process.step3.title">Интеграция</h3>
-              <p data-i18n="process.step3.text">Полноценное внедрение, настройка Make/n8n, подключение к API.</p>
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <span class="timeline__num">03</span>
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__content">
+              <h3 data-i18n="process.step3.title">Интеграция и Автоматизация</h3>
+              <p data-i18n="process.step3.text">Внедрение решений, настройка систем автоматизации, интеграция сервисов.</p>
             </div>
           </div>
-          <div class="step">
-            <div class="step__num">04</div>
-            <div class="step__content">
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <span class="timeline__num">04</span>
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__content">
               <h3 data-i18n="process.step4.title">Поддержка</h3>
               <p data-i18n="process.step4.text">Обучение сотрудников, мониторинг работы и доработки.</p>
             </div>
