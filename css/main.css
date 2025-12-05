@@ -34,10 +34,10 @@ ul {
 .section {
   padding: 100px 0;
   position: relative;
-  /* Ensure content is centered vertically for snap */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .section--dark {
@@ -1052,11 +1052,17 @@ ul {
   font-size: 0.9rem;
   color: var(--color-text-muted);
   position: relative;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+}
+
+/* Footer height on desktop for snap */
+@media (min-width: 1024px) {
+  .footer {
+    min-height: 100vh;
+  }
 }
 
 .footer::before {
@@ -1387,7 +1393,8 @@ ul {
   }
 
   .hero {
-    min-height: auto;
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100svh - var(--header-height)); /* Better for mobile browsers */
     padding-top: 140px;
     padding-bottom: 60px;
     height: auto;
@@ -1493,8 +1500,6 @@ ul {
    ========================================================================== */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -1502,25 +1507,57 @@ body {
   overflow-x: hidden;
 }
 
-section, header, footer {
-  scroll-snap-align: start;
-  min-height: 100vh;
-  /* Ensure sections don't overlap visually */
-  background-color: var(--color-bg); 
-  z-index: 1;
-  position: relative;
+/* Desktop: Page-by-page snap with center alignment */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+  
+  section, footer {
+    scroll-snap-align: center;
+    min-height: 100vh;
+    background-color: var(--color-bg); 
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Hero snaps to start because of fixed header */
+  .hero {
+    scroll-snap-align: start;
+  }
 }
 
 /* Exceptions for header which is fixed */
 header {
   min-height: auto;
-  background: none; /* Handled by .header class */
+  background: none;
   z-index: 1000;
 }
 
-/* Exception for footer if content is short, but keep min-height for snap */
+/* Footer keeps its own background */
 footer {
-  /* Background color already set in .footer class */
+  background-color: #02000d;
+}
+
+/* Mobile/Tablet: Soft snap */
+@media (max-width: 1023px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  
+  section, footer {
+    scroll-snap-align: start;
+    min-height: auto;
+    background-color: var(--color-bg);
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Hero needs min-height on mobile */
+  .hero {
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100svh - var(--header-height));
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1575,14 +1612,5 @@ footer {
   
   .page-nav__dot:hover::before {
     opacity: 1;
-  }
-}
-
-@media (max-width: 1023px) {
-  html {
-    scroll-snap-type: y proximity;
-  }
-  section {
-    scroll-snap-align: start;
   }
 }
